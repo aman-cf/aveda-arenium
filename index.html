@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Aveda Arenium</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aveda Arenium by DKG Landcorp — six towers above a retail and clubhouse podium on PR-7, GMADA Aerocity, Mohali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="preload" as="image" href="img/dkg-logo.png">
+<style>
+/* Layout: DKG half-split — two columns, right column starts at 50% + 8px. Light grounds carry the page; Espresso, Oxblood and Gulf Blue mark chapter breaks. One continuous scrubbed film for chapters 1–5. */
+:root {
+  --espresso: #161211; --espresso-2: #221c1a; --coral: #dd4d4d; --ivory: #f5f4f2; --stone: #f0ece6;
+  --warm: #edded4; --clay: #9e7878; --clay-deep: #7f5c5c; --gulf: #0c6291; --bone: #f4efe9;
+  --oxblood: #6e2420; --ox-muted: #e3c9bf;
+  --taupe: #8f8683; --taupe-deep: #6f6763;
+  --hair-l: #16121114; --hair-l15: #16121126; --hair-d: #ffffff1f; --hair-d15: #ffffff30; --hover-l: #16121112; --hover-d: #ffffff14;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --gut: max(16px, env(safe-area-inset-left, 0px)); --gutr: max(16px, env(safe-area-inset-right, 0px));
+  --ease: cubic-bezier(.2,.7,.1,1);
+  color-scheme: light;
+}
+html { background: var(--ivory); }
+body { background: var(--ivory); color: var(--espresso); font: 400 13px/1.42 var(--sans); letter-spacing: -.01em; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+body.locked { overflow: hidden; }
+* { box-sizing: border-box; }
+img, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; }
+::selection { background: var(--coral); color: var(--espresso); }
+
+/* ---------- type ---------- */
+.dxl { font: 400 clamp(44px, 4.6vw, 64px)/.92 var(--serif); letter-spacing: -.035em; margin: 0; text-wrap: balance; }
+.dxl em, .st em, .ttl em { font-style: italic; }
+.st { font: 400 clamp(26px, 2.5vw, 35px)/1.03 var(--serif); letter-spacing: -.03em; text-indent: 2em; margin: 0; text-wrap: pretty; }
+.ttl { font: 400 34px/1 var(--serif); letter-spacing: -.03em; margin: 0; }
+.cap { font: 400 12px/1.2 var(--serif); }
+.lbl { font: 600 10px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; }
+.nav-t { font: 600 11px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; }
+.body { max-width: 340px; margin: 0; }
+.muted { color: var(--taupe-deep); }
+.tnum { font-variant-numeric: tabular-nums; }
+.dk { background: var(--espresso); color: var(--bone); }
+.dk .muted, .dk .lbl.muted { color: var(--taupe); }
+
+/* ---------- grid ---------- */
+.wrap { padding-left: var(--gut); padding-right: var(--gutr); }
+.split { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; }
+.split > * { min-width: 0; }
+.rc { grid-column: 2; }
+.sec { position: relative; }
+.pad { padding-block: clamp(96px, 12vw, 160px); }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; row-gap: 32px; } .rc { grid-column: 1; } }
+
+/* ---------- text link (DS) ---------- */
+.tl { display: inline-flex; align-items: center; justify-content: space-between; gap: 8px; width: 144px; padding: 0 0 8px; border: 0; border-bottom: 1px solid currentColor; background: none; color: inherit; font: 600 11px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; text-decoration: none; position: relative; isolation: isolate; cursor: pointer; }
+.tl::before { content: ''; position: absolute; z-index: -1; inset: -8px -8px 0; background: transparent; transition: background-color .25s var(--ease); }
+.tl:hover::before, .tl:focus-visible::before { background: var(--hover-l); }
+.on-dark .tl:hover::before, .on-dark .tl:focus-visible::before { background: var(--hover-d); }
+.tl svg { flex: none; }
+.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 1px solid currentColor; outline-offset: 4px; }
+
+/* word rise (headings) */
+.rise .ln { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.rise .ln > span { display: inline-block; transform: translateY(105%); will-change: transform; }
+.wr .w { opacity: .16; }
+
+/* ---------- nav ---------- */
+.nav { position: fixed; z-index: 40; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: calc(14px + env(safe-area-inset-top, 0px)) var(--gutr) 14px var(--gut); color: var(--espresso); transition: color .4s var(--ease), opacity .8s var(--ease), transform .8s var(--ease); pointer-events: none; }
+.nav.pre { opacity: 0; transform: translateY(-12px); }
+.nav > * { pointer-events: auto; }
+.nav::before, .nav::after { content: ''; position: absolute; z-index: -1; opacity: 0; transition: opacity .4s var(--ease); pointer-events: none; }
+.nav::before { inset: 0 0 -40px; background: linear-gradient(to bottom, #16121166, #16121100); }
+.nav::after { inset: 0 0 -24px; background: linear-gradient(to bottom, #f5f4f2f0 55%, #f5f4f200); }
+.nav.dark { color: var(--bone); }
+.nav.dark::before { opacity: 1; }
+.nav.solid::after { opacity: 1; }
+.nav.solid.dark::after { opacity: 0; }
+.nav ul { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; }
+.nav ul a { position: relative; padding: 6px 0; }
+.nav ul a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav ul a:hover::after { transform: scaleX(1); }
+.wm { font: 400 clamp(15px, 1.6vw, 24px)/1 var(--sans); letter-spacing: .32em; margin-right: -.32em; text-transform: uppercase; white-space: nowrap; }
+.nav-end { display: flex; justify-content: flex-end; align-items: center; gap: 24px; }
+.nav-end a { display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 820px) { .nav { grid-template-columns: 1fr auto; } .nav ul, .nav-time { display: none; } .wm { justify-self: start; } }
+
+/* ---------- preloader ---------- */
+.pre-l { position: fixed; inset: 0; z-index: 60; background: var(--espresso); color: var(--bone); display: grid; grid-template-rows: 1fr auto; transition: transform 1.1s cubic-bezier(.7,0,.2,1); }
+.pre-l.out { transform: translateY(-100%); pointer-events: none; }
+.pre-c { display: grid; place-items: center; align-content: center; gap: 28px; }
+.pre-logo { width: clamp(120px, 14vw, 180px); clip-path: inset(100% 0 0 0); transform: translateY(14px); transition: clip-path 1.1s var(--ease), transform 1.1s var(--ease); }
+.pre-l.go .pre-logo { clip-path: inset(0 0 0 0); transform: none; }
+.pre-wm { display: flex; overflow: hidden; font: 400 clamp(18px, 2.2vw, 30px)/1.1 var(--sans); letter-spacing: .32em; margin-right: -.32em; text-transform: uppercase; }
+.pre-wm span { display: inline-block; transform: translateY(110%); transition: transform .9s var(--ease); }
+.pre-l.go .pre-wm span { transform: none; }
+.pre-sub { opacity: 0; transition: opacity .9s var(--ease) .9s; color: var(--taupe); }
+.pre-l.go .pre-sub { opacity: 1; }
+.pre-b { display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 0 var(--gutr) calc(24px + env(safe-area-inset-bottom, 0px)) var(--gut); }
+.pre-bar { flex: 1; max-width: 360px; height: 1px; background: var(--hair-d); overflow: hidden; }
+.pre-bar i { display: block; height: 100%; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform .35s linear; }
+.pre-pct { font: 400 clamp(40px, 5vw, 64px)/.9 var(--serif); letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+
+/* ---------- film ---------- */
+.film { position: relative; }
+.stage { position: sticky; top: 0; height: 100vh; height: 100lvh; overflow: hidden; background: var(--ivory); }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, #161211c2 0%, #16121180 22%, #1612111f 50%, #16121100 72%); opacity: 0; }
+.scrim.side { background: linear-gradient(to right, #16121199 0%, #16121140 40%, #16121100 64%); }
+.hfade { position: absolute; left: 0; right: 0; bottom: 0; height: 48%; pointer-events: none; background: linear-gradient(to top, #f5f4f2f2 0%, #f5f4f2d9 38%, #f5f4f200 100%); }
+.ov { position: absolute; inset: 0; pointer-events: none; }
+.layer { position: absolute; opacity: 0; visibility: hidden; will-change: opacity, transform; }
+.hero-txt { left: var(--gut); right: var(--gutr); bottom: clamp(28px, 6vh, 64px); color: var(--espresso); display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; align-items: end; opacity: 1; visibility: visible; }
+.hero-txt .dxl { font-size: clamp(48px, 6.4vw, 64px); }
+.hero-txt .r { display: grid; gap: 24px; }
+@media (max-width: 820px) { .hero-txt { grid-template-columns: 1fr; row-gap: 20px; } }
+.co { position: absolute; left: 0; top: 0; pointer-events: none; opacity: 0; will-change: transform, opacity; }
+.co .ln { position: absolute; left: 0; top: 0; width: 1px; background: currentColor; transform-origin: top; }
+.co .pin { position: absolute; left: -3.5px; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.co .tx { position: absolute; left: 12px; top: -4px; white-space: nowrap; display: grid; gap: 4px; }
+.co.ink { color: var(--espresso); } .co.lt { color: var(--bone); }
+.co.lt .tx { text-shadow: 0 1px 12px #16121199; }
+.panel { background: var(--ivory); color: var(--espresso); padding: 40px; display: grid; gap: 24px; width: min(560px, calc(100vw - 32px)); }
+.panel.stone { background: var(--stone); }
+.p-right { right: max(var(--gutr), 4vw); top: 50%; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; border-top: 1px solid var(--hair-l15); padding-top: 24px; }
+.stat b { display: block; font: 400 clamp(40px, 4vw, 56px)/.92 var(--serif); letter-spacing: -.035em; }
+.stat span { display: block; margin-top: 6px; }
+.film-txt { color: var(--bone); left: var(--gut); right: var(--gutr); bottom: clamp(28px, 8vh, 80px); display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; align-items: end; }
+.film-txt .r { display: grid; gap: 16px; }
+.film-txt .body { color: var(--bone); }
+.film-txt .lbl { color: #f4efe9cc; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.fprog { position: absolute; left: var(--gut); right: var(--gutr); bottom: 14px; height: 1px; background: #ffffff26; pointer-events: none; }
+.fprog i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: var(--coral); transform-origin: left; transform: scaleX(0); }
+@media (max-width: 820px) {
+  .film-txt { grid-template-columns: 1fr; row-gap: 16px; }
+  .panel { padding: 24px; gap: 16px; }
+  .p-right { right: var(--gutr); left: var(--gut); width: auto; top: auto; bottom: 24px; }
+  .stats { gap: 16px; }
+}
+.wipe { position: absolute; inset: 0; background: var(--ivory); transform: translateY(100%); pointer-events: none; }
+
+/* ---------- plan ---------- */
+.plan { height: 320vh; }
+.plan-in { position: sticky; top: 0; min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; padding-top: clamp(72px, 10vh, 112px); padding-bottom: 24px; gap: 16px; background: var(--ivory); }
+.plan-head { align-items: end; }
+.plan-svg { width: 100%; height: 100%; max-height: 60vh; align-self: center; overflow: visible; margin-top: 16px; }
+.plan-svg .fp { fill: #ffffff; fill-opacity: 0; stroke: var(--espresso); stroke-width: 2.4; stroke-linejoin: round; }
+.plan-svg .lane { fill: none; stroke: var(--clay); stroke-width: 2; }
+.plan-svg .shop { fill: var(--gulf); fill-opacity: 0; stroke: var(--gulf); stroke-width: 2; stroke-opacity: 0; }
+.plan-svg .dv { stroke: var(--ivory); stroke-width: 3; opacity: 0; }
+.plan-svg .lob { fill: var(--coral); fill-opacity: 0; stroke: var(--coral); stroke-width: 3; stroke-opacity: 0; cursor: pointer; transition: fill .3s; }
+.plan-svg .lob:hover, .plan-svg .lob.sel { fill: #c43a3a; }
+.plan-svg .tag { paint-order: stroke; stroke: var(--ivory); stroke-width: 12px; stroke-linejoin: round; font: 600 30px/1 var(--sans); text-transform: uppercase; letter-spacing: .04em; fill: var(--espresso); opacity: 0; pointer-events: none; }
+.plan-svg .real { opacity: 0; pointer-events: none; mix-blend-mode: multiply; }
+.plan-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }
+.legend { display: flex; gap: 24px; flex-wrap: wrap; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 14px; height: 10px; display: inline-block; }
+.lob-info { min-height: 44px; display: grid; gap: 4px; max-width: 360px; }
+.lob-info .ttl { font-size: 26px; }
+@media (max-width: 820px) { .plan { height: 260vh; } }
+
+/* ---------- arrival (horizontal cards) ---------- */
+.arr { background: var(--stone); }
+.hz-in { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; }
+.htrack { display: flex; gap: 16px; align-items: center; padding-left: var(--gut); padding-right: var(--gutr); will-change: transform; }
+.hintro { flex: none; width: min(520px, 80vw); display: flex; flex-direction: column; gap: 24px; padding-right: 48px; }
+.acard { flex: none; width: 50vh; display: flex; flex-direction: column; gap: 20px; }
+.acard .ph { position: relative; height: 52vh; overflow: hidden; clip-path: inset(10% 0 10% 30%); will-change: clip-path; }
+.acard:nth-of-type(even) .ph { height: 42vh; }
+.acard .ph img { position: absolute; top: 0; left: -8%; width: 116%; max-width: none; height: 100%; object-fit: cover; will-change: transform; }
+.acard .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, #16121140, #16121100 30%); }
+.acard-n { position: absolute; left: 16px; top: 14px; z-index: 2; color: var(--bone); font: 400 12px/1 var(--serif); }
+.acard-t { display: flex; flex-direction: column; gap: 8px; padding-right: 24px; opacity: 0; transform: translateY(30px); will-change: transform, opacity; }
+.acard-t .ttl { font-size: clamp(24px, 2vw, 30px); }
+.hend { flex: none; width: min(440px, 80vw); display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding: 0 var(--gutr) 0 48px; }
+@media (max-width: 900px) {
+  .arr { height: auto !important; }
+  .arr .hz-in { position: relative; height: auto; display: block; padding-block: 96px; }
+  .htrack { flex-direction: column; align-items: stretch; transform: none !important; gap: 48px; }
+  .hintro, .hend { width: auto; padding: 0; }
+  .acard { width: 100%; }
+  .acard .ph, .acard:nth-of-type(even) .ph { height: auto; aspect-ratio: 4/3; }
+}
+
+/* ---------- garden ---------- */
+.garden { background: var(--ivory); overflow: hidden; }
+.leaf { position: absolute; inset: 0; pointer-events: none; opacity: .55; background:
+  radial-gradient(60px 22px at 12% 18%, #dcd8d2 40%, transparent 72%),
+  radial-gradient(90px 30px at 22% 12%, #dcd8d2 30%, transparent 70%),
+  radial-gradient(70px 24px at 82% 70%, #dcd8d2 40%, transparent 72%),
+  radial-gradient(120px 36px at 90% 62%, #dcd8d2 30%, transparent 72%),
+  radial-gradient(50px 18px at 72% 78%, #dcd8d2 40%, transparent 72%); filter: blur(10px); transform: rotate(-12deg) scale(1.3); }
+.band { position: relative; height: clamp(400px, 72vh, 680px); margin: 0; overflow: hidden; }
+.band img, .ip img { position: absolute; left: 0; top: -12%; width: 100%; height: 124%; object-fit: cover; will-change: transform; }
+.band figcaption { position: absolute; left: var(--gut); bottom: 16px; color: var(--bone); z-index: 1; display: grid; gap: 4px; }
+.band::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #16121166 0%, #16121100 45%); }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.duo figure { margin: 0; }
+.ip { position: relative; overflow: hidden; }
+.duo .a .ip { aspect-ratio: 3/4; } .duo .b { margin-top: 30%; } .duo .b .ip { aspect-ratio: 4/3; }
+.duo figcaption { margin-top: 8px; }
+@media (max-width: 820px) { .duo { grid-template-columns: 1fr; } .duo .b { margin-top: 0; } }
+
+/* ---------- wellness ---------- */
+.well { background: var(--ivory); }
+.well-in { position: sticky; top: 0; height: 100vh; display: grid; align-items: center; padding-block: 72px 24px; }
+.well-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 16px; align-items: center; height: 100%; }
+.wstage { position: relative; height: min(78vh, 760px); overflow: hidden; background: var(--stone); }
+.wimg { position: absolute; inset: 0; overflow: hidden; clip-path: inset(100% 0 0 0); will-change: clip-path; }
+.wimg:first-child { clip-path: inset(0 0 0 0); }
+.wimg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); will-change: transform; }
+.wimg .ph-t { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 10px; background: var(--stone); color: var(--clay-deep); text-align: center; }
+.wimg .ph-t b { font: 400 clamp(36px, 4vw, 56px)/.95 var(--serif); letter-spacing: -.035em; color: var(--espresso); font-weight: 400; }
+.wcount { position: absolute; left: 16px; top: 14px; z-index: 3; color: var(--bone); font: 400 14px/1 var(--serif); mix-blend-mode: difference; }
+.well-txt { display: grid; gap: 28px; padding-left: clamp(0px, 3vw, 48px); align-content: center; }
+.idx { list-style: none; margin: 0; padding: 0; font: 600 11px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; width: 100%; max-width: 380px; }
+.idx li { display: grid; grid-template-columns: 44px 1fr 7px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--hair-l15); color: var(--clay-deep); transition: color .35s var(--ease), border-color .35s; }
+.idx li .n { font-weight: 400; }
+.idx li .dot { opacity: 0; transition: opacity .3s; }
+.idx li.on { color: var(--espresso); border-bottom-color: var(--espresso); }
+.idx li.on .dot { opacity: 1; }
+@media (max-width: 820px) { .well-grid { grid-template-columns: 1fr; align-content: center; } .wstage { height: 46vh; } .well-txt { padding-left: 0; gap: 16px; } .well-txt .body { display: none; } }
+
+/* ---------- recreation ---------- */
+.play { position: relative; }
+.play-v { position: sticky; top: 0; height: 100vh; overflow: hidden; background: var(--espresso); }
+.play-v video, .play-v img { width: 100%; height: 100%; object-fit: cover; }
+.play-v .scrim { opacity: 1; }
+.play-steps { position: relative; margin-top: -100vh; }
+.step { height: 100vh; display: flex; align-items: flex-end; padding-bottom: clamp(24px, 8vh, 80px); }
+.play-head { color: var(--bone); display: grid; gap: 16px; max-width: 640px; }
+
+/* ---------- night ---------- */
+.night { background: var(--espresso); color: var(--bone); height: 240vh; }
+.night-in { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; }
+.night-v { position: absolute; inset: 0; clip-path: inset(18% 22%); will-change: clip-path; }
+.night-v video { width: 100%; height: 100%; object-fit: cover; }
+.night-v::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #161211b3, #16121133 50%, #16121100); }
+.night-t { position: relative; z-index: 1; align-self: end; justify-self: stretch; padding-bottom: clamp(32px, 9vh, 96px); }
+.night-t .dxl em { color: var(--coral); }
+.night .wr .w { opacity: .22; }
+
+/* ---------- residences ---------- */
+.homes { height: 520vh; background: var(--ivory); }
+.homes-in { background: var(--ivory); position: sticky; top: 0; min-height: 100vh; display: grid; align-items: center; padding-block: 84px 24px; }
+.homes-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px 32px; align-items: center; }
+.homes-l { display: grid; gap: 28px; align-content: center; }
+.typ { font: 600 11px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; max-width: 380px; }
+.typ button { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: 64px 1fr auto 7px; gap: 8px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--hair-l15); color: var(--clay-deep); cursor: pointer; transition: color .35s var(--ease), border-color .35s; }
+.typ button .n { font-weight: 400; }
+.typ button .dot { opacity: 0; }
+.typ button[aria-selected="true"] { color: var(--espresso); border-bottom-color: var(--espresso); }
+.typ button[aria-selected="true"] .dot { opacity: 1; }
+.typ button:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
+.homes-r { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 24px; align-items: center; }
+.plan-img { position: relative; aspect-ratio: 4/3; }
+.plan-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; opacity: 0; transition: opacity .6s var(--ease), clip-path .9s var(--ease); clip-path: inset(0 0 0 100%); }
+.plan-img img.on { opacity: 1; clip-path: inset(0 0 0 0); }
+.hdata { display: grid; gap: 16px; align-content: center; }
+.hdata .sz { font: 400 clamp(44px, 4.4vw, 64px)/.92 var(--serif); letter-spacing: -.035em; }
+.hdata .sz small { display: block; margin-top: 8px; font: 600 10px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; color: var(--taupe-deep); }
+.rooms { display: grid; border-top: 1px solid var(--hair-l15); }
+.rooms div { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--hair-l); font-size: 12px; }
+.rooms div span:last-child { font-variant-numeric: tabular-nums; color: var(--taupe-deep); white-space: nowrap; }
+.fade-in { animation: fi .6s var(--ease) both; }
+@keyframes fi { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.homes-prog { height: 1px; background: var(--hair-l15); position: relative; max-width: 380px; }
+.homes-prog i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: var(--coral); transform-origin: left; transform: scaleX(0); }
+@media (max-width: 980px) { .homes { height: auto; } .homes-in { position: static; } .homes-grid { grid-template-columns: 1fr; } .homes-r { grid-template-columns: 1fr; } }
+
+/* ---------- location ---------- */
+.place { background: var(--stone); }
+.place-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.place-grid > * { min-width: 0; }
+.map-wrap { position: sticky; top: 0; height: 100vh; display: grid; align-items: center; }
+.map { width: 100%; max-height: 82vh; aspect-ratio: 1; overflow: visible; }
+.map .ring { fill: none; stroke: #16121130; stroke-width: 1; }
+.map .ray { stroke: var(--espresso); stroke-width: 1; fill: none; opacity: .35; transition: opacity .4s, stroke .4s, stroke-width .4s; }
+.map .ray.on { opacity: 1; stroke: var(--coral); stroke-width: 2; }
+.map .nd { fill: var(--espresso); transition: fill .4s; }
+.map g.on .nd { fill: var(--coral); }
+.map .home { fill: var(--coral); }
+.map .pulse { fill: none; stroke: var(--coral); stroke-width: 1.2; }
+.map text { font: 600 10px/1 var(--sans); text-transform: uppercase; letter-spacing: .02em; fill: var(--espresso); paint-order: stroke; stroke: var(--stone); stroke-width: 5px; }
+.map .rt { font: 400 13px/1 var(--serif); text-transform: none; letter-spacing: 0; fill: var(--taupe-deep); }
+.map .km-big { font: 400 46px/1 var(--serif); letter-spacing: -.03em; text-transform: none; fill: var(--espresso); }
+.map .runner { fill: var(--coral); }
+.map .lb { transition: opacity .4s; }
+.dist { list-style: none; margin: 0; padding: 30vh 0 30vh; }
+.dist li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--hair-l15); align-items: baseline; opacity: .38; transition: opacity .45s var(--ease); }
+.dist li.on { opacity: 1; }
+.dist li b { font: 400 clamp(24px, 2.4vw, 34px)/1.05 var(--serif); letter-spacing: -.025em; font-weight: 400; }
+.dist li small { display: block; color: var(--taupe-deep); margin-top: 6px; font-size: 12px; }
+.dist li .km { font: 400 30px/1 var(--serif); letter-spacing: -.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dist li .km i { font: 600 10px/1 var(--sans); font-style: normal; text-transform: uppercase; margin-left: 4px; color: var(--taupe-deep); }
+@media (max-width: 820px) { .place-grid { grid-template-columns: 1fr; } .map-wrap { position: sticky; top: 56px; height: auto; z-index: 1; background: var(--stone); padding-bottom: 8px; } .map { max-height: 40vh; } .dist { padding: 0; } }
+
+/* ---------- corridor (why now) ---------- */
+.corr { height: 260vh; }
+.corr-in { position: sticky; top: 0; min-height: 100vh; display: grid; align-content: center; gap: 56px; padding-block: 96px 48px; }
+.timeline { position: relative; }
+.tl-line { height: 1px; background: var(--hair-d15); position: relative; margin-bottom: 36px; }
+.tl-line i { position: absolute; inset: 0; background: var(--coral); transform-origin: left; transform: scaleX(0); }
+.tl-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; }
+.tl-item { display: flex; flex-direction: column; gap: 12px; position: relative; opacity: 0; transform: translateY(40px); will-change: transform, opacity; }
+.tl-item::before { content: ''; position: absolute; top: -40px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--bone); }
+.tl-year { font: 400 clamp(48px, 5vw, 80px)/.88 var(--serif); letter-spacing: -.04em; }
+.tl-year em { color: var(--coral); font-style: normal; }
+.tl-item .ttl { font-size: 22px; }
+.tl-item .body { color: #f4efe9cc; }
+.status { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); column-gap: 16px; }
+.status > div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--hair-d15); opacity: 0; transform: translateY(16px); }
+.status .lbl { color: var(--taupe); }
+@media (max-width: 820px) {
+  .corr { height: auto; } .corr-in { position: relative; }
+  .tl-grid { grid-template-columns: minmax(0, 1fr); row-gap: 40px; padding-left: 24px; border-left: 1px solid var(--hair-d15); }
+  .tl-line { display: none; } .tl-item::before { top: 12px; left: -28px; }
+}
+
+/* ---------- recognition (oxblood) ---------- */
+.recog { background: var(--oxblood); color: var(--bone); }
+.recog .muted, .recog .lbl.muted { color: var(--ox-muted); }
+.counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; }
+.counts > div { border-top: 1px solid var(--hair-d15); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.num { font: 400 clamp(56px, 6.4vw, 96px)/.9 var(--serif); letter-spacing: -.04em; display: flex; align-items: baseline; gap: 6px; }
+.num small { font-size: .32em; letter-spacing: -.01em; color: var(--ox-muted); }
+.odo { display: inline-flex; overflow: hidden; height: .92em; }
+.odo .dg { display: inline-flex; flex-direction: column; will-change: transform; }
+.odo .dg span { height: .92em; line-height: .92; display: block; text-align: center; }
+.awards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.aw { min-height: 190px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 20px 20px 18px 0; border-top: 1px solid var(--hair-d15); opacity: 0; transform: translateY(30px); }
+.aw .ttl { font-size: clamp(22px, 1.9vw, 28px); }
+.aw .yr { font: 400 12px/1.2 var(--serif); color: var(--ox-muted); }
+.marquee { overflow: hidden; border-top: 1px solid var(--hair-d15); border-bottom: 1px solid var(--hair-d15); padding: 22px 0; white-space: nowrap; }
+.mq-in { display: inline-flex; gap: 56px; padding-right: 56px; animation: mq 38s linear infinite; font: 400 clamp(26px, 2.6vw, 40px)/1 var(--serif); letter-spacing: -.03em; }
+.mq-in span { display: inline-flex; align-items: center; gap: 56px; }
+.mq-in span::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+@keyframes mq { to { transform: translateX(-100%); } }
+.infra { display: grid; }
+.infra > div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--hair-d15); align-items: baseline; }
+.infra h4 { margin: 0; font: 400 22px/1.1 var(--serif); letter-spacing: -.02em; }
+@media (max-width: 820px) { .counts, .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 24px; } .aw { min-height: 140px; } }
+
+/* ---------- promise ---------- */
+.quote { background: var(--gulf); color: var(--bone); height: 260vh; }
+.quote-in { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.q-txt { position: relative; z-index: 3; padding-top: clamp(96px, 15vh, 160px); }
+.quote .st { font-size: clamp(34px, 4.2vw, 62px); line-height: .98; text-indent: 0; max-width: 15ch; }
+.quote .wr .w { opacity: .26; }
+.q-logo { position: absolute; z-index: 1; left: 50%; bottom: calc(100vw * .3408 * .5); width: min(30vw, 440px); transform: translate(-50%, 30px); opacity: 0; will-change: transform, opacity; }
+.q-bld { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; width: 100%; height: auto; max-width: none; transform: translateY(60%); will-change: transform; }
+.quote-in::after { content: ''; position: absolute; inset: auto 0 0; height: 18%; z-index: 2; background: linear-gradient(to top, #0c629166, #0c629100); pointer-events: none; }
+@media (max-width: 820px) { .q-bld { width: 180%; left: -40%; } .q-logo { width: 56vw; bottom: calc(180vw * .3408 * .5); } }
+
+/* ---------- enquiry + footer ---------- */
+.enq { background: var(--espresso); color: var(--bone); }
+form { display: grid; gap: 20px; max-width: 520px; }
+.f { display: grid; gap: 6px; }
+.f label { font: 600 10px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .02em; color: var(--taupe); }
+.f input, .f select { appearance: none; border: 0; border-bottom: 1px solid var(--hair-d15); background: transparent; padding: 8px 0 10px; font: 400 22px/1.2 var(--serif); letter-spacing: -.01em; color: var(--bone); border-radius: 0; width: 100%; }
+.f select option { color: var(--espresso); }
+.f input:focus, .f select:focus { outline: none; border-bottom-color: var(--bone); }
+.f input::placeholder { color: #8f8683; }
+.f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--taupe); }
+.consent input { margin-top: 2px; accent-color: var(--coral); }
+.err { color: #f08a7f; font-size: 12px; min-height: 16px; margin: 0; }
+.thanks { display: grid; gap: 16px; }
+@media (max-width: 560px) { .f2 { grid-template-columns: 1fr; } }
+.foot { background: var(--espresso-2); color: var(--bone); padding: 56px var(--gutr) 24px var(--gut); display: flex; flex-direction: column; gap: 48px; }
+.foot-top { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; }
+.foot-top > div { display: flex; flex-direction: column; gap: 8px; }
+.foot-top a { text-decoration: none; }
+.foot-top a:hover { text-decoration: underline; }
+.foot .lbl { color: var(--taupe); }
+.foot .muted { color: var(--taupe); }
+.foot-big { font: 400 clamp(48px, 11.5vw, 184px)/.85 var(--serif); letter-spacing: -.045em; white-space: nowrap; text-align: center; }
+.foot-big em { font-style: italic; }
+.foot-bot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--hair-d); padding-top: 16px; color: var(--taupe); }
+@media (max-width: 820px) { .foot-top { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; } }
+
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .mq-in { animation: none; } }
+</style>
+</head>
+<body>
+
+
+<div class="pre-l" id="pre" aria-hidden="true">
+  <div class="pre-c">
+    <img class="pre-logo" src="img/dkg-logo.png" alt="">
+    <div class="pre-wm" id="prewm"></div>
+    <span class="lbl pre-sub">PR-7 · GMADA Aerocity · Mohali</span>
+  </div>
+  <div class="pre-b"><span class="lbl" style="color:var(--taupe)">Preparing the film</span><div class="pre-bar"><i id="prebar"></i></div><span class="pre-pct" id="prepct">0</span></div>
+</div>
+
+<header class="nav nav-t pre" id="nav">
+  <ul>
+    <li><a href="#residences">Residences</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a class="wm" href="#top" aria-label="Aveda Arenium, back to top">Aveda Arenium</a>
+  <div class="nav-end"><span class="nav-time tnum" id="clock">Mohali</span><a href="#enquire"><span class="dot"></span>Enquire</a></div>
+</header>
+
+<main>
+<!-- ============ FILM ============ -->
+<section class="film" id="top" aria-label="Aveda Arenium, from drawing to building">
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-hidden="true"></canvas>
+    <div class="scrim" id="scrim"></div>
+    <div class="scrim side" id="scrim2"></div>
+    <div class="hfade" id="hfade"></div>
+    <div class="wipe" id="wipe"></div>
+    <div class="ov">
+      <div class="layer hero-txt" id="L0">
+        <h1 class="dxl">A place to <em>gather</em>,<br>on PR-7.</h1>
+        <div class="r">
+          <p class="body">Six towers above a retail and clubhouse podium on 12.28 acres of GMADA Aerocity, Mohali — drawn by Studio Symbiosis, built by DKG Landcorp.</p>
+          <span class="lbl">Scroll to see it built ↓</span>
+        </div>
+      </div>
+      <div class="layer panel p-right" id="L1">
+        <span class="lbl muted">1.0 — The project</span>
+        <p class="st"><em>Aveda</em>, the sum of all knowing. <em>Arenium</em>, a place to gather.</p>
+        <div class="stats">
+          <div class="stat"><b class="tnum" data-count="12.28" data-dec="2">0</b><span class="lbl muted">Acres on PR-7</span></div>
+          <div class="stat"><b class="tnum" data-count="6">0</b><span class="lbl muted">Towers, one podium</span></div>
+          <div class="stat"><b class="tnum" data-count="4">0</b><span class="lbl muted">Typologies</span></div>
+          <div class="stat"><b class="tnum" data-count="7000" data-sep="1">0</b><span class="lbl muted">Sq ft, largest home</span></div>
+        </div>
+      </div>
+      <div class="layer film-txt" id="L2">
+        <h2 class="dxl">Six towers,<br>one <em>podium</em>.</h2>
+        <div class="r">
+          <span class="lbl">2.0 — The architecture</span>
+          <p class="body">Studio Symbiosis was founded in Stuttgart, New Delhi and London by Amit Gupta and Britta Knobel Gupta, lead architects at Zaha Hadid Architects from 2006 to 2010. A copper-louvred skin wraps every tower; the podium holds the street and the clubhouse above it.</p>
+          <div class="facts lbl"><span>100+ awards</span><span>120M+ sq ft designed</span><span>15+ countries</span><span>Red Dot 2023</span></div>
+        </div>
+      </div>
+      <div class="layer film-txt" id="L3">
+        <h2 class="dxl">Developing<br>with <em>purpose</em>.</h2>
+        <div class="r">
+          <span class="lbl">3.0 — The developer</span>
+          <p class="body">DKG Landcorp builds on 25 years of infrastructure from its parent, DMR Builders: elevated highways, river bridges and flyovers across Punjab, built with the state and NHAI. Aveda Arenium is its flagship home.</p>
+          <div class="facts lbl"><span>25+ years</span><span>Led by the Garg family</span><span>Mohali, Sector 83</span></div>
+        </div>
+      </div>
+      <div class="layer film-txt" id="L4">
+        <h2 class="dxl">Life at<br><em>street</em> level.</h2>
+        <div class="r">
+          <span class="lbl">4.0 — The podium</span>
+          <p class="body">Shops line the ground and upper floors of the podium, opening onto a landscaped arrival plaza. Residents pass through it to their own lobbies, with the clubhouse one level above the street.</p>
+        </div>
+      </div>
+      <div class="co ink" id="c0"><i class="ln"></i><i class="pin"></i><span class="tx"><span class="lbl">Sawtooth crown</span><span class="cap">Every tower ends in a stepped roofline</span></span></div>
+      <div class="co ink" id="c1"><i class="ln"></i><i class="pin"></i><span class="tx"><span class="lbl">The podium</span><span class="cap">Retail below, clubhouse above</span></span></div>
+      <div class="co ink" id="c2"><i class="ln"></i><i class="pin"></i><span class="tx"><span class="lbl">Arrival plaza</span><span class="cap">A landscaped forecourt off PR-7</span></span></div>
+      <div class="co lt" id="c3"><i class="ln"></i><i class="pin"></i><span class="tx"><span class="lbl">Copper louvres</span><span class="cap">Shade for every balcony</span></span></div>
+      <div class="co lt" id="c4"><i class="ln"></i><i class="pin"></i><span class="tx"><span class="lbl">The DKG crown</span><span class="cap">The podium's lit corner</span></span></div>
+    </div>
+    <div class="fprog" id="fprog"><i></i></div>
+  </div>
+</section>
+
+<!-- ============ 4.1 plan ============ -->
+<section class="sec plan" id="plan" aria-label="Ground-floor plan">
+  <div class="plan-in wrap">
+    <div class="split plan-head">
+      <div><span class="lbl muted">4.1 — Ground floor</span><h2 class="dxl" style="margin-top:16px">One podium,<br>four <em>lobbies</em>.</h2></div>
+      <p class="body rc">Retail fronts the street on every side. Behind it, four private lobbies lift residents into the six towers, each reached from the drop-off without crossing a shopfront. Choose a lobby to see the homes above it.</p>
+    </div>
+    <svg class="plan-svg" id="psvg" viewBox="0 70 3168 1260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Ground-floor plan: retail units around the podium, four residential lobbies, drop-off lanes and the main entry">
+<rect class="lane" x="380" y="652" width="1010" height="66" rx="33"/>
+<rect class="lane" x="1436" y="652" width="716" height="72" rx="36"/>
+<rect class="lane" x="2212" y="652" width="820" height="66" rx="33"/>
+<line class="lane" x1="1690" y1="780" x2="1690" y2="1150"/><line class="lane" x1="1858" y1="780" x2="1858" y2="1150"/>
+<path class="fp" d="M60 292 L60 513 L84 535 L84 599 L271 599 L276 563 L315 563 L316 598 L397 599 L398 634 L538 634 L539 599 L1211 599 L1212 633 L1351 634 L1352 599 L1775 599 L1776 634 L1915 634 L1916 599 L2607 599 L2608 633 L2745 633 L2746 599 L2863 599 L2866 590 L3023 599 L3024 633 L3035 633 L3035 592 L3061 588 L3061 470 L3035 469 L3035 231 L2913 231 L2912 197 L2602 197 L2601 231 L2478 231 L2475 331 L2389 332 L2387 312 L2358 311 L2358 277 L2384 276 L2385 265 L2397 264 L2397 146 L2300 146 L2300 182 L2315 182 L2316 172 L2367 173 L2367 233 L2329 234 L2313 223 L2313 248 L2290 249 L2289 311 L2257 311 L2255 286 L2185 286 L2178 224 L2168 224 L2155 252 L2114 252 L2117 172 L2220 172 L2221 236 L2231 237 L2231 253 L2280 254 L2279 237 L2249 236 L2261 146 L2109 146 L2108 171 L1934 171 L1933 146 L1779 146 L1779 182 L1793 183 L1793 236 L1759 237 L1759 253 L1809 253 L1809 237 L1821 236 L1822 172 L1925 172 L1926 253 L1885 252 L1874 222 L1864 222 L1859 285 L1786 286 L1784 311 L1752 310 L1752 249 L1740 249 L1740 300 L1711 300 L1711 265 L1728 258 L1728 223 L1711 234 L1675 233 L1675 173 L1726 172 L1727 182 L1741 182 L1741 146 L1644 146 L1644 264 L1657 265 L1658 276 L1685 277 L1685 311 L1565 327 L1564 294 L1551 294 L1550 327 L1493 328 L1494 423 L1432 422 L1432 277 L1458 276 L1459 264 L1471 264 L1471 146 L1375 146 L1375 182 L1389 182 L1390 172 L1441 173 L1441 233 L1403 234 L1388 223 L1388 258 L1405 266 L1405 300 L1377 300 L1376 249 L1365 249 L1365 310 L1332 311 L1329 286 L1257 285 L1252 224 L1242 224 L1229 251 L1189 252 L1191 172 L1294 172 L1295 236 L1308 237 L1308 253 L1357 253 L1357 237 L1324 236 L1324 183 L1338 182 L1338 146 L1184 146 L1183 171 L991 171 L990 235 L950 234 L939 204 L929 204 L922 269 L850 269 L849 293 L818 293 L816 232 L805 232 L804 283 L775 283 L775 247 L792 239 L792 205 L776 215 L740 214 L740 155 L808 163 L808 127 L710 127 L709 247 L749 260 L749 292 L722 294 L721 309 L675 309 L673 145 L558 145 L557 211 L521 212 L507 203 L507 182 L492 183 L480 195 L478 268 L402 269 L401 248 L314 252 L314 195 L291 195 L278 180 L278 126 L327 125 L328 143 L421 143 L419 197 L454 197 L455 125 L562 125 L562 98 L187 98 L187 125 L245 126 L245 204 L186 212 L186 244 L270 252 L271 293 L186 301 L184 291 Z"/>
+<path class="shop" d="M1906 1108 L1910 1126 L1922 1145 L1934 1156 L1963 1166 L2156 1164 L2453 1170 L2706 1183 L2982 1205 L3009 1193 L3029 1167 L3089 962 L3089 935 L3077 907 L3047 886 L2882 869 L2859 1065 L2833 1066 L2705 1051 L2705 1018 L2725 855 L2414 836 L2171 828 L2161 1024 L2047 1020 L2055 827 L1961 826 L1931 838 L1914 858 L1907 877 Z"/>
+<path class="shop" d="M1656 1127 L1655 869 L1647 849 L1632 833 L1601 820 L1519 821 L1522 1016 L1407 1016 L1403 822 L1166 830 L849 850 L863 1049 L708 1060 L691 864 L489 886 L457 906 L440 940 L442 974 L454 998 L714 1252 L751 1267 L956 1237 L1270 1202 L1603 1179 L1632 1167 L1649 1147 Z"/>
+<path class="shop" d="M1099 517 L1100 597 L2019 596 L2019 519 L1966 516 L1965 448 L1769 448 L1767 426 L1614 426 L1613 336 L1606 331 L1517 330 L1511 336 L1503 336 L1501 426 L1353 425 L1349 448 L1153 448 L1150 516 Z"/>
+<path class="shop" d="M86 319 L87 596 L270 595 L267 318 Z"/>
+<path class="shop" d="M362 435 L363 597 L1039 594 L1038 435 L834 435 L832 408 L749 408 L743 313 L594 313 L565 317 L562 435 Z"/>
+<path class="shop" d="M2918 235 L2912 243 L2912 595 L3032 597 L3029 338 L3033 234 Z"/>
+<path class="shop" d="M2822 445 L2811 441 L2690 440 L2688 391 L2602 391 L2601 242 L2597 234 L2487 236 L2487 244 L2481 247 L2481 333 L2362 335 L2357 426 L2276 427 L2274 448 L2079 448 L2078 596 L2820 597 Z"/>
+<line class="dv" x1="930" y1="844" x2="957" y2="1238"/>
+<line class="dv" x1="1009" y1="839" x2="1033" y2="1229"/>
+<line class="dv" x1="1090" y1="835" x2="1111" y2="1221"/>
+<line class="dv" x1="2223" y1="1166" x2="2244" y2="830"/>
+<line class="dv" x1="2543" y1="1175" x2="2575" y2="846"/>
+<line class="dv" x1="2913" y1="1201" x2="2961" y2="876"/>
+<line class="dv" x1="1333" y1="857" x2="1341" y2="1181"/>
+<line class="dv" x1="671" y1="596" x2="671" y2="313"/>
+<line class="dv" x1="181" y1="597" x2="181" y2="316"/>
+<line class="dv" x1="2312" y1="1167" x2="2329" y2="889"/>
+<line class="dv" x1="860" y1="901" x2="881" y2="1168"/>
+<line class="dv" x1="1170" y1="830" x2="1181" y2="1080"/>
+<line class="dv" x1="2464" y1="1089" x2="2486" y2="840"/>
+<line class="dv" x1="2387" y1="1066" x2="2403" y2="840"/>
+<line class="dv" x1="2479" y1="398" x2="2481" y2="598"/>
+<line class="dv" x1="1529" y1="821" x2="1532" y2="1017"/>
+<line class="dv" x1="2041" y1="1020" x2="2047" y2="833"/>
+<line class="dv" x1="749" y1="408" x2="750" y2="595"/>
+<line class="dv" x1="616" y1="487" x2="617" y2="313"/>
+<line class="dv" x1="1500" y1="426" x2="1501" y2="596"/>
+<line class="dv" x1="2957" y1="1038" x2="2982" y2="879"/>
+<line class="dv" x1="1259" y1="448" x2="1260" y2="598"/>
+<line class="dv" x1="2603" y1="543" x2="2604" y2="393"/>
+<line class="dv" x1="1261" y1="922" x2="1266" y2="1064"/>
+<line class="dv" x1="2429" y1="476" x2="2429" y2="334"/>
+<line class="dv" x1="2145" y1="1165" x2="2153" y2="1030"/>
+<line class="dv" x1="2623" y1="1049" x2="2639" y2="915"/>
+<line class="dv" x1="1615" y1="426" x2="1616" y2="547"/>
+<line class="dv" x1="1390" y1="427" x2="1391" y2="541"/>
+<line class="dv" x1="854" y1="1143" x2="862" y2="1253"/>
+<line class="dv" x1="1325" y1="448" x2="1326" y2="556"/>
+<line class="dv" x1="1191" y1="1106" x2="1197" y2="1211"/>
+<line class="dv" x1="2378" y1="1169" x2="2386" y2="1074"/>
+<line class="dv" x1="1417" y1="1107" x2="1420" y2="1191"/>
+<line class="dv" x1="2690" y1="523" x2="2690" y2="440"/>
+<line class="dv" x1="1727" y1="501" x2="1727" y2="426"/>
+<line class="dv" x1="2612" y1="1179" x2="2619" y2="1107"/>
+<line class="dv" x1="2466" y1="1172" x2="2472" y2="1101"/>
+<line class="dv" x1="910" y1="506" x2="910" y2="435"/>
+<path class="lob" data-i="0" d="M670 148 L565 148 L564 243 L528 244 L527 253 L485 253 L484 407 L395 408 L393 301 L361 299 L362 432 L560 432 L559 310 L670 308 Z"/>
+<path class="lob" data-i="1" d="M836 299 L835 432 L1038 432 L1037 310 L1152 309 L1150 445 L1347 445 L1346 316 L1309 316 L1307 425 L1216 424 L1216 266 L1183 265 L1183 175 L997 176 L997 247 L964 251 L962 408 L873 408 L871 299 Z"/>
+<path class="lob" data-i="2" d="M1770 318 L1770 445 L1965 445 L1963 328 L2079 327 L2077 445 L2272 445 L2271 316 L2234 316 L2233 425 L2142 424 L2141 266 L2108 265 L2108 174 L1933 175 L1933 265 L1899 266 L1898 425 L1808 425 L1807 316 Z"/>
+<path class="lob" data-i="3" d="M2604 200 L2604 388 L2690 388 L2691 433 L2719 438 L2719 362 L2690 359 L2691 232 L2714 230 L2822 233 L2826 359 L2801 360 L2794 365 L2796 437 L2821 433 L2823 385 L2909 386 L2909 200 Z"/>
+      <g id="tags"></g>
+      <image class="real" id="preal" href="img/plan.webp" x="0" y="0" width="3168" height="1344" preserveAspectRatio="none"/>
+    </svg>
+    <div class="plan-foot">
+      <div class="legend lbl">
+        <span><i style="background:var(--coral)"></i>Residential lobbies</span>
+        <span><i style="background:var(--gulf)"></i>Retail</span>
+        <span><i style="border-top:2px solid var(--clay);height:0"></i>Drop-off and entry</span>
+      </div>
+      <div class="lob-info" id="lobinfo" aria-live="polite"><span class="lbl muted">Indicative plan, not to scale</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5.0 arrival ============ -->
+<section class="sec arr" id="amenities" aria-label="Arrival and hospitality">
+  <div class="hz-in">
+    <div class="htrack" id="htrack">
+      <div class="hintro">
+        <span class="lbl muted">5.0 — Arrival &amp; hospitality</span>
+        <h2 class="dxl">A hotel's <em>welcome</em>, at home.</h2>
+        <p class="body muted">The arrival face of Aveda Arenium on PR-7: a retail frontage with integrated facade lighting, planting and water at the approach, and a clubhouse held directly above.</p>
+        <span class="lbl">Seven arrival amenities · scroll to explore</span>
+      </div>
+      <article class="acard"><div class="ph"><img src="img/cover.webp" alt="The podium frontage on PR-7 at dusk" loading="lazy" decoding="async"><span class="acard-n">01 / 07</span></div><div class="acard-t"><h3 class="ttl">Signature entrance lobby</h3><p class="body muted">The first room of every return home, an arrival designed with a hotel’s sense of occasion.</p></div></article><article class="acard"><div class="ph"><img src="img/clubhouse.webp" alt="The clubhouse crown above the retail podium" loading="lazy" decoding="async"><span class="acard-n">02 / 07</span></div><div class="acard-t"><h3 class="ttl">24/7 concierge desk</h3><p class="body muted">Hospitality-grade service at the front desk, through the day and the night.</p></div></article><article class="acard"><div class="ph"><img src="img/arcade.webp" alt="The retail arcade inside the podium, lit at night" loading="lazy" decoding="async"><span class="acard-n">03 / 07</span></div><div class="acard-t"><h3 class="ttl">Residence business lounges</h3><p class="body muted">Lounges for meetings and quiet work, a lift ride from home.</p></div></article><article class="acard"><div class="ph"><img src="img/six-towers.webp" alt="Aveda Arenium across the landscape at dusk" loading="lazy" decoding="async"><span class="acard-n">04 / 07</span></div><div class="acard-t"><h3 class="ttl">Co-working and meeting rooms</h3><p class="body muted">Rooms for a focused day at the desk or a meeting with clients, without the commute.</p></div></article><article class="acard"><div class="ph"><img src="img/aerial-night.webp" alt="Aerial view of Aveda Arenium lit at night" loading="lazy" decoding="async"><span class="acard-n">05 / 07</span></div><div class="acard-t"><h3 class="ttl">Private dining room</h3><p class="body muted">A private table for family and guests, hosted without leaving home.</p></div></article><article class="acard"><div class="ph"><img src="img/podium.webp" alt="The tower frontage rising above the podium" loading="lazy" decoding="async"><span class="acard-n">06 / 07</span></div><div class="acard-t"><h3 class="ttl">Multipurpose hall</h3><p class="body muted">Space for celebrations, gatherings and the life of the community.</p></div></article><article class="acard"><div class="ph"><img src="img/garden-walk.webp" alt="Towers and landscaped terraces at golden hour" loading="lazy" decoding="async"><span class="acard-n">07 / 07</span></div><div class="acard-t"><h3 class="ttl">Café</h3><p class="body muted">An everyday meeting place for residents, at the heart of the podium.</p></div></article>
+      <div class="hend">
+        <span class="lbl muted">Arrival &amp; hospitality</span>
+        <h3 class="ttl">See the arrival experience in person.</h3>
+        <a class="tl" href="#enquire">Book a visit<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 L8.5 1.5 M3 1.5 H8.5 V7" fill="none" stroke="currentColor"/></svg></a>
+        <p class="cap muted">Imagery shows project renders for representation. Interiors are in active design development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5.1 garden ============ -->
+<section class="sec garden pad" id="garden" aria-label="Landscape">
+  <div class="leaf" aria-hidden="true"></div>
+  <div class="wrap split" style="position:relative">
+    <div><span class="lbl muted" id="gl">5.1 — Landscape</span></div>
+    <div class="rc" style="display:grid;gap:24px">
+      <h2 class="dxl rise" id="gh">A landscape that runs <em>between</em> the towers.</h2>
+      <p class="st wr" id="gs">A Japanese garden at the centre, shaded walks along every edge, and planting that reaches the lobbies, so the walk home is the quietest part of the day.</p>
+    </div>
+  </div>
+  <figure class="band" id="band" style="margin-top:clamp(64px,8vw,120px)">
+    <img src="img/landscape.webp" alt="Garden walk lined with flowering beds below a tower at sunset" loading="lazy">
+    <figcaption><span class="lbl">Zen garden</span><span class="ttl">The central court</span></figcaption>
+  </figure>
+  <div class="wrap duo" style="margin-top:16px">
+    <figure class="a"><div class="ip" data-ip="1"><img src="img/tower.webp" alt="Aerial view of the landscaped courtyard winding between the towers" loading="lazy"></div></figure>
+    <figure class="b"><div class="ip" data-ip="1"><img src="img/garden-walk.webp" alt="Evening garden path with lit hedges" loading="lazy"></div><figcaption class="cap muted">Lit walks, mature trees and seating on every path.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 5.2 wellness ============ -->
+<section class="sec well" id="wellness" aria-label="Wellness">
+  <div class="well-in wrap">
+    <div class="well-grid">
+      <div class="wstage" id="wstage"><div class="wimg"><img src="img/outdoors.webp" alt="The pool deck set within palms and planting" loading="lazy" decoding="async"></div><div class="wimg"><div class="ph-t"><span class="lbl">Image in production</span><b>Steam and sauna</b></div></div><div class="wimg"><div class="ph-t"><span class="lbl">Image in production</span><b>Jacuzzi</b></div></div><div class="wimg"><div class="ph-t"><span class="lbl">Image in production</span><b>Premium gym</b></div></div><div class="wimg"><div class="ph-t"><span class="lbl">Image in production</span><b>Yoga studio</b></div></div><div class="wimg"><div class="ph-t"><span class="lbl">Image in production</span><b>Recovery rooms</b></div></div><span class="wcount tnum" id="wcount">01 / 06</span></div>
+      <div class="well-txt">
+        <span class="lbl muted">5.2 — Wellness</span>
+        <h2 class="dxl">Heat, water<br>and <em>rest</em>.</h2>
+        <p class="body">A full wellness floor in the clubhouse: train in the morning, recover in the evening, and never leave the building to do either.</p>
+        <ol class="idx" id="widx"><li><span class="n">01</span><span>Pool and sun deck</span><span class="dot"></span></li><li><span class="n">02</span><span>Steam and sauna</span><span class="dot"></span></li><li><span class="n">03</span><span>Jacuzzi</span><span class="dot"></span></li><li><span class="n">04</span><span>Premium gym</span><span class="dot"></span></li><li><span class="n">05</span><span>Yoga studio</span><span class="dot"></span></li><li><span class="n">06</span><span>Recovery rooms</span><span class="dot"></span></li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5.3 recreation ============ -->
+<section class="sec play" id="play" aria-label="Recreation">
+  <div class="play-v"><video id="recv" src="img/rec-courts.mp4" poster="img/rec-poster.webp" muted loop playsinline preload="none" aria-label="Floodlit courts in the evening"></video><div class="scrim"></div></div>
+  <div class="play-steps">
+    <div class="step wrap"><div class="play-head"><span class="lbl">5.3 — Recreation</span><h2 class="dxl">Movement, kept<br>close to <em>home</em>.</h2></div></div>
+    <div class="step wrap"></div>
+    <div class="step wrap"><div class="panel stone">
+      <span class="lbl muted">Courts and rooms</span>
+      <p class="st">Five ways to play, a short lift ride from the living room.</p>
+      <ol class="idx" style="max-width:none"><li class="on"><span class="n">01</span><span>Tennis</span><span class="dot"></span></li><li><span class="n">02</span><span>Padel</span><span class="dot"></span></li><li><span class="n">03</span><span>Basketball</span><span class="dot"></span></li><li><span class="n">04</span><span>Cricket simulator</span><span class="dot"></span></li><li><span class="n">05</span><span>Private theatre</span><span class="dot"></span></li></ol>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ 5.4 night ============ -->
+<section class="sec night" id="night" aria-label="After dark">
+  <div class="night-in">
+    <div class="night-v" id="nightv"><video id="nv" src="img/afterdark.mp4" poster="img/dark-poster.webp" muted loop playsinline preload="none" aria-label="The towers lit at night"></video></div>
+    <div class="night-t wrap split">
+      <div><span class="lbl" style="color:var(--taupe)">5.4 — After dark</span>
+      <h2 class="dxl wr" id="nh" style="margin-top:16px">The towers, lit for the <em>evening</em>.</h2></div>
+      <p class="body rc" style="align-self:end">Facade lighting traces each balcony line, and the podium stays bright from dusk, so arriving home late still feels like arriving somewhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6.0 residences ============ -->
+<section class="sec homes" id="residences" aria-label="Residences">
+  <div class="homes-in wrap">
+    <div class="homes-grid">
+      <div class="homes-l">
+        <span class="lbl muted">6.0 — The residences</span>
+        <h2 class="dxl">Four typologies, each with room to <em>host</em>.</h2>
+        <p class="body">Every home has an en-suite for each bedroom, a separate family lounge and staff quarters. Scroll, or choose a plan.</p>
+        <div class="typ" role="tablist" aria-label="Home types" id="typ"></div>
+        <div class="homes-prog"><i id="hprog"></i></div>
+      </div>
+      <div class="homes-r">
+        <div class="plan-img" id="pimg"></div>
+        <div class="hdata" id="hdata"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7.0 location ============ -->
+<section class="sec place" id="location" aria-label="Location">
+  <div class="wrap split" style="padding-top:clamp(96px,12vw,160px)">
+    <div><span class="lbl muted">7.0 — The place</span><h2 class="dxl" style="margin-top:16px">Rooted in the <em>corridor</em>.</h2></div>
+    <p class="body rc" style="align-self:end">On PR-7, the airport road through GMADA Aerocity: five minutes from Chandigarh International Airport and a short drive from IT City, ISB and the Tricity's hospitals.</p>
+  </div>
+  <div class="wrap place-grid">
+    <div class="map-wrap"><svg class="map" id="map" viewBox="0 0 600 600" role="img" aria-label="Distances from Aveda Arenium to nearby landmarks"></svg></div>
+    <ul class="dist" id="dist"></ul>
+  </div>
+</section>
+
+<!-- ============ 7.1 corridor ============ -->
+<section class="sec corr dk" id="corridor" aria-label="Why now">
+  <div class="corr-in wrap">
+    <div class="split">
+      <span class="lbl" style="color:var(--taupe)">7.1 — Why now</span>
+      <h2 class="dxl rc">A decade-long constraint, being <em>resolved</em>.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-line"><i id="tlline"></i></div>
+      <div class="tl-grid" id="tlgrid">
+        <div class="tl-item"><span class="tl-year">2015</span><span class="ttl">The bottleneck begins</span><p class="body">The airport's new terminal opens and the convenient domestic terminal closes, removing the short route from Chandigarh, Panchkula and Zirakpur.</p></div>
+        <div class="tl-item"><span class="tl-year">2025</span><span class="ttl">State-level approval</span><p class="body">A shorter airport link for Zirakpur, Panchkula and the Kalka–Shimla corridor is approved, cutting the route from 13.7 km to 9.6 km.</p></div>
+        <div class="tl-item"><span class="tl-year">2026</span><span class="ttl">Parallel fixes under way</span><p class="body">NHAI awards the Zirakpur–Panchkula bypass and a spur to the Ambala–Chandigarh Expressway; PR-7 widening moves into construction.</p></div>
+        <div class="tl-item"><span class="tl-year">2027<em>+</em></span><span class="ttl">The corridor matures</span><p class="body">Apollo's 736-bed hospital targets completion and Infosys's new campus scales toward full occupancy.</p></div>
+      </div>
+    </div>
+    <div>
+      <span class="lbl" style="color:var(--taupe);display:block;margin-bottom:16px">What is being built around Aveda Arenium</span>
+      <div class="status" id="status">
+        <div><span>Aerocity township</span><span class="lbl">Delivered</span></div>
+        <div><span>PR-7 corridor widening</span><span class="lbl">Under construction</span></div>
+        <div><span>Infosys IT campus</span><span class="lbl">Under construction</span></div>
+        <div><span>Apollo super-speciality hospital</span><span class="lbl">Targeting 2027</span></div>
+        <div><span>Airport connectivity upgrades</span><span class="lbl">Approved</span></div>
+        <div><span>Aerotropolis expansion</span><span class="lbl">Land acquisition</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8.0 recognition ============ -->
+<section class="sec recog pad" id="recognition" aria-label="Recognition">
+  <div class="wrap">
+    <div class="split" style="margin-bottom:clamp(56px,7vw,96px)">
+      <span class="lbl muted">8.0 — Recognition</span>
+      <div class="rc" style="display:grid;gap:24px">
+        <h2 class="dxl rise" id="rh">Architecture by a studio founded by former Zaha Hadid Architects <em>partners</em>.</h2>
+        <p class="body">Studio Symbiosis, led by Amit Gupta and Britta Knobel Gupta — both AA London (M.Arch) and lead architects at Zaha Hadid Architects from 2006 to 2010 — leads Aveda Arenium's architecture and landscape design.</p>
+      </div>
+    </div>
+    <div class="counts" id="counts">
+      <div><span class="num"><span class="odo" data-to="100"></span><small>+</small></span><span class="lbl muted">Architects</span></div>
+      <div><span class="num"><span class="odo" data-to="100"></span><small>+</small></span><span class="lbl muted">Awards</span></div>
+      <div><span class="num"><span class="odo" data-to="120"></span><small>M+ sq ft</small></span><span class="lbl muted">Designed</span></div>
+      <div><span class="num"><span class="odo" data-to="15"></span><small>+</small></span><span class="lbl muted">Countries</span></div>
+    </div>
+    <div class="awards" id="awards" style="margin-top:clamp(64px,8vw,112px)"></div>
+  </div>
+  <div class="marquee" style="margin-top:64px" aria-label="Featured in TEDx, Forbes, Godrej Design Lab, World Architecture Community and Rethinking The Future">
+    <div class="mq-in" aria-hidden="true"><span>Featured — TEDx</span><span>Forbes</span><span>Godrej Design Lab</span><span>World Architecture Community</span><span>Rethinking The Future</span></div><div class="mq-in" aria-hidden="true"><span>Featured — TEDx</span><span>Forbes</span><span>Godrej Design Lab</span><span>World Architecture Community</span><span>Rethinking The Future</span></div>
+  </div>
+  <div class="wrap split" style="padding-top:clamp(64px,8vw,112px)">
+    <div style="display:grid;gap:24px;align-content:start">
+      <span class="lbl muted">Built by the group</span>
+      <h2 class="dxl">Infrastructure the region already <em>drives</em> on.</h2>
+      <p class="body">DMR Builders, DKG Landcorp's parent, has delivered public infrastructure across Punjab for more than 25 years.</p>
+    </div>
+    <div class="infra rc">
+      <div><h4>Six-lane elevated structure</h4><span class="lbl muted">Rayya</span></div>
+      <div><h4>Four-lane ROB, NH-503</h4><span class="lbl muted">Nangal</span></div>
+      <div><h4>Judicial Complexes</h4><span class="lbl muted">Zira &amp; Gurdaspur</span></div>
+      <div><h4>Four-laning of NH-07</h4><span class="lbl muted">Bathinda</span></div>
+      <div><h4>Flyover &amp; Medicity Junction</h4><span class="lbl muted">Mullanpur</span></div>
+    </div>
+  </div>
+  <p class="cap muted wrap" style="margin:48px 0 0">Awards listed are those of Studio Symbiosis, the project's architecture consultant.</p>
+</section>
+
+<!-- ============ promise ============ -->
+<section class="sec quote" id="promise-sec" aria-label="A promise from DKG Landcorp">
+  <div class="quote-in">
+    <div class="q-txt wrap split">
+      <span class="lbl" style="padding-top:12px">DKG Landcorp</span>
+      <p class="st wr rc" id="promise">Every home starts with a <em>promise</em>, and we build on it.</p>
+    </div>
+    <img class="q-logo" id="qlogo" src="img/dkg-logo-white.png" alt="" loading="lazy">
+    <img class="q-bld" id="qbld" src="img/building.webp" alt="Aveda Arenium seen from the arrival plaza" loading="lazy">
+  </div>
+</section>
+
+<!-- ============ 9.0 enquiry ============ -->
+<section class="sec enq pad on-dark" id="enquire" aria-label="Enquire">
+  <div class="wrap split">
+    <div style="display:grid;gap:24px;align-content:start">
+      <span class="lbl" style="color:var(--taupe)">9.0 — Enquire</span>
+      <h2 class="dxl">Request a private <em>presentation</em>.</h2>
+      <p class="body" style="color:#f4efe9cc">Share a few details and the Aveda Arenium team will arrange a walkthrough of the residences, plans and availability, at the sales gallery or by video.</p>
+      <div style="display:grid;gap:6px;margin-top:24px"><span class="lbl" style="color:var(--taupe)">Sales office</span><span class="cap" style="font-size:16px">World Tech 83, IT City Road, Sector 83, Mohali, Punjab</span></div>
+    </div>
+    <div class="rc">
+      <form id="lead" novalidate>
+        <div class="f"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your full name" required></div>
+        <div class="f2">
+          <div class="f"><label for="f-phone">Mobile number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91" required></div>
+          <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label for="f-res">Residence of interest</label><select id="f-res" name="res"><option>3 + 1 · from 3,080 sq ft</option><option>4 + 1 · from 4,070 sq ft</option><option>4 + 2 · 5,600 sq ft</option><option>5 + 2 · from 6,500 sq ft</option><option>Undecided</option></select></div>
+          <div class="f"><label for="f-time">Best time to call</label><select id="f-time" name="time"><option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+        </div>
+        <label class="consent"><input type="checkbox" id="f-ok" name="consent"><span>I agree to be contacted by DKG Landcorp about Aveda Arenium by phone, email or WhatsApp.</span></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="tl" type="submit">Request a call<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 L8.5 1.5 M3 1.5 H8.5 V7" fill="none" stroke="currentColor"/></svg></button>
+      </form>
+      <div class="thanks" id="thanks" hidden><span class="lbl" style="color:var(--taupe)">Received</span><h3 class="dxl" id="thx-t">Thank you.</h3><p class="body" style="color:#f4efe9cc">A member of the Aveda Arenium team will call you to arrange your presentation. This page is a preview; requests are not yet sent to the sales team.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="foot">
+  <div class="foot-top">
+    <div><span class="lbl">Project</span><span>Aveda Arenium</span><span class="muted">PR-7, Pocket 1, E-Block, GMADA Aerocity, Mohali</span></div>
+    <div><span class="lbl">Developer</span><span>DKG Landcorp</span><span class="muted">A DMR Builders Pvt. Ltd. company</span></div>
+    <div><span class="lbl">Explore</span><a href="#residences">Residences</a><a href="#amenities">Amenities</a><a href="#location">Location</a></div>
+    <div class="on-dark"><span class="lbl">Registration</span><span>RERA [registration no.]</span><a class="tl" href="#enquire" style="margin-top:12px">Enquire<span class="dot"></span></a></div>
+  </div>
+  <div class="foot-big" aria-hidden="true">Aveda <em>Arenium</em></div>
+  <div class="foot-bot"><span class="cap">Figures, amenities and specifications shown are indicative and subject to change. Renders are for representation purposes.</span><span class="cap">© 2026 DKG Landcorp · Developing With Purpose</span></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function seg(p, a, b) { return clamp((p - a) / (b - a), 0, 1); }
+  function eo(t) { return 1 - Math.pow(1 - t, 3); }
+  function eio(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function win(t, a, b, e) { e = e || .06; return Math.min(seg(t, a, a + e), 1 - seg(t, b - e, b)); }
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile = Math.min(screen.width, innerWidth) < 820;
+  var VH = innerHeight, VW = innerWidth, SY = 0;
+
+  /* ---------- section geometry cache (no layout reads while scrolling) ---------- */
+  var geo = [];
+  function G(el) { var o = { el: el, top: 0, h: 0 }; geo.push(o); return o; }
+  function measure() { VH = innerHeight; VW = innerWidth; var y = scrollY; geo.forEach(function (o) { var r = o.el.getBoundingClientRect(); o.top = r.top + y; o.h = r.height; }); }
+  function trackG(o) { var t = o.h - VH; return t > 0 ? clamp((SY - o.top) / t, 0, 1) : (SY > o.top ? 1 : 0); }
+  function throughG(o) { return clamp((SY + VH - o.top) / (VH + o.h), 0, 1); }
+  function revealG(o) { return (SY + VH - o.top) / VH; }               // 0 when top hits bottom of screen, 1 when top hits top
+  function near(o) { return SY + VH * 1.5 > o.top && SY - VH * .5 < o.top + o.h; }
+
+  /* ---------- text helpers ---------- */
+  function splitWords(el, cls) {
+    var out = [];
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (w) {
+            if (!w) return;
+            if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(w)); return; }
+            var s = document.createElement('span');
+            if (cls === 'rise') { s.className = 'ln'; var i = document.createElement('span'); i.textContent = w; s.appendChild(i); out.push(i); }
+            else { s.className = 'w'; s.textContent = w; out.push(s); }
+            frag.appendChild(s);
+          });
+          node.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') walk(n);
+      });
+    })(el);
+    return out;
+  }
+  function wordReveal(ws, t, lo) { var n = ws.length; lo = lo == null ? .16 : lo; for (var i = 0; i < n; i++) { var v = clamp(t * (n + 4) - i, 0, 1); ws[i].style.opacity = (lo + v * (1 - lo)).toFixed(3); } }
+  function riseWords(ws, t) { var n = ws.length; for (var i = 0; i < n; i++) { var v = eo(clamp(t * (n * .35 + 1) - i * .35, 0, 1)); ws[i].style.transform = 'translateY(' + ((1 - v) * 105).toFixed(1) + '%)'; } }
+
+  /* ---------- clock ---------- */
+  function tick() { try { $('#clock').textContent = 'Mohali ' + new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }).format(new Date()); } catch (e) {} }
+  tick(); setInterval(tick, 30000);
+
+  /* =================================================================
+     FILM — frames are fetched as compressed blobs, decoded off the
+     main thread with createImageBitmap, and kept in a small LRU so
+     drawing a frame is a single cheap GPU copy.
+     ================================================================= */
+  var CH = [['a', 60], ['b', 40], ['c', 96], ['d', 48], ['e', 96]];
+  var WEIGHT = [2.6, 1.9, 3.4, 1.9, 3.2];
+  var FW = mobile ? 960 : 1600, FH = mobile ? 540 : 900, PER = mobile ? 4 : 1;
+  var film = $('#top'), gFilm = G(film), cv = $('#cv'), ctx = cv.getContext('2d', { alpha: false });
+  var totalW = WEIGHT.reduce(function (a, b) { return a + b; }, 0);
+  film.style.height = (totalW * 100 + 100) + 'vh';
+  var bounds = [], acc = 0; WEIGHT.forEach(function (w) { bounds.push([acc / totalW, (acc + w) / totalW]); acc += w; });
+  function fileOf(c, f) { var n = CH[c][0]; return mobile ? 'f/' + n + 'm' + ('0' + Math.floor(f / 4)).slice(-2) + '.avif' : 'f/' + n + ('00' + f).slice(-3) + '.avif'; }
+  function unitOf(c, f) { return c + ':' + (mobile ? Math.floor(f / 4) : f); }
+  var blobs = {}, fetching = {}, bmp = {}, decoding = {}, lru = [], LRU_MAX = mobile ? 14 : 44;
+  var fq = [], factive = 0, FMAX = 6;
+  for (var c0 = 0; c0 < CH.length; c0++) { var seen = {}; for (var f0 = 0; f0 < CH[c0][1]; f0++) { var u0 = unitOf(c0, f0); if (!seen[u0]) { seen[u0] = 1; fq.push([c0, f0]); } } }
+  // order: chapter 1 first, coarse-to-fine, then the rest in order
+  (function () { var first = fq.filter(function (x) { return x[0] === 0; }), rest = fq.filter(function (x) { return x[0] > 0; }), o = []; [4, 2, 1].forEach(function (st) { first.forEach(function (x, i) { if (i % st === 0 && o.indexOf(x) < 0) o.push(x); }); }); fq = o.concat(rest); })();
+  var needFirst = fq.filter(function (x) { return x[0] === 0; }).length, gotFirst = 0, gotAll = 0, totalUnits = fq.length;
+  function pumpFetch() {
+    while (factive < FMAX && fq.length) {
+      var it = fq.shift(), u = unitOf(it[0], it[1]); if (blobs[u] || fetching[u]) continue;
+      (function (it, u) {
+        factive++; fetching[u] = 1;
+        fetch(fileOf(it[0], it[1])).then(function (r) { if (!r.ok) throw 0; return r.blob(); }).then(function (b) { blobs[u] = b; }).catch(function () {}).then(function () {
+          factive--; delete fetching[u]; gotAll++; if (it[0] === 0) { gotFirst++; preProgress(gotFirst / needFirst); }
+          if (Math.abs(it[1] - want[1]) < 8 && it[0] === want[0]) dirtyFilm = true;
+          pumpFetch();
+        });
+      })(it, u);
+    }
+  }
+  function promote(u) { var i = lru.indexOf(u); if (i >= 0) lru.splice(i, 1); lru.push(u); while (lru.length > LRU_MAX) { var old = lru.shift(); if (bmp[old]) { try { bmp[old].close(); } catch (e) {} delete bmp[old]; } } }
+  function decode(u) {
+    if (bmp[u] || decoding[u] || !blobs[u]) return;
+    decoding[u] = 1;
+    createImageBitmap(blobs[u]).then(function (b) { bmp[u] = b; promote(u); delete decoding[u]; if (u.split(':')[0] == want[0]) dirtyFilm = true; }).catch(function () { delete decoding[u]; });
+  }
+  var want = [0, 0], drawn = '', dir = 1, lastF = 0;
+  function prefetchAround(c, f) {
+    var n = CH[c][1], step = mobile ? 4 : 1, ahead = mobile ? 24 : 18, behind = mobile ? 8 : 6;
+    for (var d = 0; d <= ahead; d += step) { var k = f + d * dir; if (k >= 0 && k < n) decode(unitOf(c, k)); }
+    for (var d2 = step; d2 <= behind; d2 += step) { var k2 = f - d2 * dir; if (k2 >= 0 && k2 < n) decode(unitOf(c, k2)); }
+    if (f > n - 10 && c + 1 < CH.length) decode(unitOf(c + 1, 0));
+    if (f < 10 && c > 0) decode(unitOf(c - 1, CH[c - 1][1] - 1));
+  }
+  var DPR = 1, W = 0, H = 0;
+  function sizeCanvas() { DPR = mobile ? Math.min(devicePixelRatio || 1, 1.75) : 1; W = cv.width = Math.round(cv.clientWidth * DPR); H = cv.height = Math.round(cv.clientHeight * DPR); drawn = ''; }
+  function cover() { var s = Math.max(W / FW, H / FH); return { s: s, x: (W - FW * s) / 2, y: (H - FH * s) / 2 }; }
+  function drawFrame(c, f) {
+    var id = c + ':' + f; if (id === drawn) return;
+    var n = CH[c][1], best = null, bf = -1;
+    for (var d = 0; d < n && !best; d++) { var a = [f - d, f + d]; for (var j = 0; j < 2; j++) { var k = a[j]; if (k < 0 || k >= n) continue; var b = bmp[unitOf(c, k)]; if (b) { best = b; bf = k; break; } } }
+    if (!best) return;
+    var g = cover(), sy = mobile ? (bf % 4) * FH : 0;
+    ctx.drawImage(best, 0, sy, FW, FH, g.x, g.y, FW * g.s, FH * g.s);
+    promote(unitOf(c, bf));
+    drawn = bf === f ? id : '';
+  }
+  function frameToScreen(fx, fy) { var g = cover(); return [(g.x + fx * FW * g.s) / DPR, (g.y + fy * FH * g.s) / DPR]; }
+
+  var L = [0, 1, 2, 3, 4].map(function (i) { return $('#L' + i); });
+  var CO = [0, 1, 2, 3, 4].map(function (i) { return $('#c' + i); });
+  var COA = [[0, .52, .2, 70, .06, .44], [0, .3, .56, 90, .1, .46], [0, .64, .8, 60, .14, .5], [2, .58, .3, 110, .12, .42], [3, .58, .42, 80, .2, .6]];
+  var hfade = $('#hfade'), scrim = $('#scrim'), scrim2 = $('#scrim2'), wipe = $('#wipe'), fprog = $('#fprog i');
+  var counts = $$('[data-count]', $('#L1'));
+  var lastVis = {};
+  function show(el, v, dy) {
+    var key = el.id, r = Math.round(v * 400) / 400; if (lastVis[key] === r) return; lastVis[key] = r;
+    el.style.opacity = r; el.style.visibility = r > .002 ? 'visible' : 'hidden';
+    el.style.transform = (el.id === 'L1' && !mobile ? 'translateY(-50%) ' : '') + 'translateY(' + ((1 - r) * (dy || 24)).toFixed(1) + 'px)';
+  }
+  var filmTone = 'light', dirtyFilm = true, lastP = -1, lastC = 0;
+  function renderFilm() {
+    var p = trackG(gFilm), c = 0;
+    if (p === lastP && !dirtyFilm) return; dirtyFilm = false; lastP = p;
+    for (var i = 0; i < bounds.length; i++) if (p >= bounds[i][0]) c = i;
+    var t = seg(p, bounds[c][0], bounds[c][1]);
+    var tv = c === 0 ? seg(t, .08, .96) : t;
+    var f = Math.round(eio(tv) * (CH[c][1] - 1));
+    if (c !== lastC) { lastC = c; var mine = fq.filter(function (x) { return x[0] === c || x[0] === c + 1; }); fq = mine.concat(fq.filter(function (x) { return x[0] !== c && x[0] !== c + 1; })); pumpFetch(); }
+    dir = (c > want[0] || (c === want[0] && f >= want[1])) ? 1 : -1; want = [c, f];
+    prefetchAround(c, f); drawFrame(c, f);
+    var heroV = c > 0 ? 0 : 1 - seg(t, .16, .34);
+    show(L[0], heroV, -20); hfade.style.opacity = heroV.toFixed(3);
+    show(L[1], c === 1 ? win(t, .12, .92, .14) : 0, 40);
+    show(L[2], c === 2 ? win(t, .5, .97, .1) : 0);
+    show(L[3], c === 3 ? win(t, .28, .97, .12) : 0);
+    show(L[4], c === 4 ? win(t, .3, .86, .1) : 0);
+    if (c === 1) { var ct = seg(t, .14, .5); counts.forEach(function (b) { var to = +b.dataset.count, d = +(b.dataset.dec || 0), v = to * eo(ct); b.textContent = b.dataset.sep ? Math.round(v).toLocaleString('en-IN') : v.toFixed(d); }); }
+    var sv = c === 0 ? seg(t, .7, 1) * .5 : (c === 1 ? .25 : (c === 4 ? .95 * Math.min(1, 1 - seg(t, .9, 1)) + .05 : 1));
+    if (c === 2) sv = seg(t, .4, .55); if (c === 3) sv = seg(t, .18, .32);
+    scrim.style.opacity = sv.toFixed(3); scrim2.style.opacity = (c === 2 || c === 3 ? sv * .7 : 0).toFixed(3);
+    COA.forEach(function (a, i) {
+      var el = CO[i], v = a[0] === c ? win(t, a[4], a[5], .08) : 0;
+      if (v <= 0) { if (el.style.opacity !== '0') el.style.opacity = 0; return; }
+      var s = frameToScreen(a[1], a[2]);
+      el.style.opacity = v.toFixed(3);
+      el.style.transform = 'translate3d(' + s[0].toFixed(1) + 'px,' + (s[1] - a[3]).toFixed(1) + 'px,0)';
+      var ln = el.children[0]; ln.style.height = a[3] + 'px'; ln.style.transform = 'scaleY(' + eo(v).toFixed(3) + ')';
+      el.children[1].style.top = (a[3] - 3.5) + 'px';
+    });
+    var wv = c === 4 ? eio(seg(t, .9, 1)) : 0; wipe.style.transform = 'translate3d(0,' + ((1 - wv) * 100).toFixed(2) + '%,0)';
+    fprog.style.transform = 'scaleX(' + p.toFixed(4) + ')'; fprog.parentNode.style.opacity = (c === 0 && t < .3) || wv > .2 ? 0 : 1;
+    filmTone = (c === 0 && t < .42) || wv > .5 ? 'light' : 'dark';
+  }
+
+  /* ---------- preloader ---------- */
+  var pre = $('#pre'), preDone = false, preStart = performance.now();
+  $('#prewm').innerHTML = 'Aveda Arenium'.split('').map(function (ch, i) { return '<span style="transition-delay:' + (.25 + i * .045).toFixed(2) + 's">' + (ch === ' ' ? '&nbsp;' : ch) + '</span>'; }).join('');
+  document.body.classList.add('locked');
+  requestAnimationFrame(function () { requestAnimationFrame(function () { pre.classList.add('go'); }); });
+  var shownPct = 0;
+  function preProgress(p) { var v = Math.round(clamp(p, 0, 1) * 100); if (v > shownPct) { shownPct = v; $('#prepct').textContent = v; $('#prebar').style.transform = 'scaleX(' + (v / 100) + ')'; } if (p >= 1) finishPre(); }
+  function finishPre() {
+    if (preDone) return; preDone = true;
+    var wait = Math.max(0, 2400 - (performance.now() - preStart));
+    setTimeout(function () {
+      decode(unitOf(0, 0)); dirtyFilm = true;
+      setTimeout(function () { pre.classList.add('out'); document.body.classList.remove('locked'); $('#nav').classList.remove('pre'); if (lenis) lenis.start(); }, 250);
+    }, wait);
+  }
+  setTimeout(function () { preProgress(1); }, 12000);
+
+  /* ---------- 4.1 plan ---------- */
+  var plan = $('#plan'), gPlan = G(plan), psvg = $('#psvg');
+  var fps = $$('.fp, .lane', psvg), shops = $$('.shop', psvg), dvs = $$('.dv', psvg), lobs = $$('.lob', psvg), preal = $('#preal');
+  fps.forEach(function (e) { var l = e.getTotalLength ? e.getTotalLength() : 4000; e.style.strokeDasharray = l + ' ' + l; e.style.strokeDashoffset = l; e._l = l; });
+  shops.sort(function (a, b) { return a.getBBox().x - b.getBBox().x; });
+  var LOB = [['Tower 1', '4 + 1 and 4 + 2', '4,070–5,600 sq ft · plunge pools'], ['Towers 5 & 6', '3 + 1 and 5 + 2', '3,080–7,000 sq ft'], ['Towers 2 & 3', '3 + 1 and 4 + 1', '3,080–3,570 sq ft'], ['Tower 4', '3 + 1', '3,080–3,570 sq ft']];
+  var tagsG = $('#tags'), NS = 'http://www.w3.org/2000/svg', tags = [];
+  lobs.forEach(function (lb, i) {
+    var b = lb.getBBox();
+    var t1 = document.createElementNS(NS, 'text'); t1.setAttribute('x', b.x + b.width / 2); t1.setAttribute('y', b.y - 22); t1.setAttribute('text-anchor', 'middle'); t1.setAttribute('class', 'tag'); t1.textContent = LOB[i] ? LOB[i][0] : 'Lobby'; tagsG.appendChild(t1); tags.push(t1);
+    lb.setAttribute('tabindex', '0'); lb.setAttribute('role', 'button'); lb.setAttribute('aria-label', (LOB[i] ? LOB[i][0] : 'Lobby') + ' lobby');
+    function pick() { lobs.forEach(function (o) { o.classList.remove('sel'); }); lb.classList.add('sel'); var d = LOB[i] || ['Lobby', '', '']; $('#lobinfo').innerHTML = '<span class="lbl muted">Lobby ' + (i + 1) + ' of 4</span><span class="ttl">' + d[0] + '</span><span class="lbl">' + d[1] + ' · ' + d[2] + '</span>'; }
+    lb.addEventListener('click', pick); lb.addEventListener('mouseenter', pick); lb.addEventListener('focus', pick);
+    lb.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+  });
+  var entry = document.createElementNS(NS, 'text'); entry.setAttribute('x', 1774); entry.setAttribute('y', 1200); entry.setAttribute('text-anchor', 'middle'); entry.setAttribute('class', 'tag'); entry.textContent = 'Main entry ↑'; tagsG.appendChild(entry); tags.push(entry);
+  function renderPlan() {
+    var t = trackG(gPlan);
+    var a = seg(t, 0, .32);
+    fps.forEach(function (e, i) { e.style.strokeDashoffset = (e._l * (1 - eio(clamp(a * 1.25 - i * .02, 0, 1)))).toFixed(1); if (e.classList.contains('fp')) e.style.fillOpacity = (seg(t, .25, .5) * .7).toFixed(3); });
+    var b = seg(t, .2, .5);
+    shops.forEach(function (e, i) { var v = clamp(b * (shops.length + 6) / 6 - i / 6 * .9, 0, 1); e.style.fillOpacity = (v * .92).toFixed(3); e.style.strokeOpacity = v.toFixed(3); });
+    var dv = seg(t, .45, .55).toFixed(3); dvs.forEach(function (e) { e.style.opacity = dv; });
+    var c = seg(t, .45, .7);
+    lobs.forEach(function (e, i) { var v = clamp(c * 2.2 - i * .35, 0, 1); e.style.fillOpacity = v.toFixed(3); e.style.strokeOpacity = v.toFixed(3); });
+    var real = eio(seg(t, .76, .94));
+    tags.forEach(function (e, i) { e.style.opacity = (clamp(c * 2.2 - i * .35 - .3, 0, 1) * (1 - real)).toFixed(3); });
+    preal.style.opacity = real.toFixed(3);
+  }
+
+  /* ---------- 5.0 arrival ---------- */
+  var arr = $('#amenities'), gArr = G(arr), track = $('#htrack'), acards = $$('.acard', track), aW = 0, aOff = [];
+  function sizeArr() {
+    if (VW <= 900) { arr.style.height = ''; aW = 0; return; }
+    track.style.transform = 'none';
+    aW = Math.max(0, track.scrollWidth - VW); arr.style.height = (VH + aW) + 'px';
+    aOff = acards.map(function (c) { return [c.offsetLeft, c.offsetWidth]; });
+  }
+  function renderArr() {
+    if (VW <= 900) { acards.forEach(function (c) { var ph = c.children[0], tx = c.children[1]; ph.style.clipPath = 'none'; tx.style.opacity = 1; tx.style.transform = 'none'; }); return; }
+    var t = trackG(gArr), x = -t * aW;
+    track.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
+    acards.forEach(function (c, i) {
+      var left = aOff[i][0] + x, w = aOff[i][1];
+      var r = clamp((VW - left) / (VW * .45), 0, 1);                       // left 100% → 55%
+      var ph = c.children[0], im = ph.querySelector('img'), tx = c.children[1];
+      ph.style.clipPath = 'inset(' + ((1 - r) * 10).toFixed(2) + '% 0% ' + ((1 - r) * 10).toFixed(2) + '% ' + ((1 - r) * 30).toFixed(2) + '%)';
+      var px = clamp((VW - left) / (VW + w), 0, 1); im.style.transform = 'translate3d(' + (6 - px * 12).toFixed(2) + '%,0,0)';
+      var tr = clamp((VW * .85 - left) / (VW * .3), 0, 1); tx.style.opacity = tr.toFixed(3); tx.style.transform = 'translate3d(0,' + ((1 - tr) * 30).toFixed(1) + 'px,0)';
+    });
+  }
+
+  /* ---------- 5.1 garden ---------- */
+  var garden = $('#garden'), gGar = G(garden), gRise = splitWords($('#gh'), 'rise'), gWords = splitWords($('#gs')), gl = $('#gl');
+  var band = $('#band'), gBand = G(band), bimg = $('img', band);
+  var ips = $$('[data-ip]').map(function (el) { return { el: el, g: G(el), img: $('img', el) }; });
+  function renderGarden() {
+    var rv = revealG(gGar);                                                // starts once the section is ~38% on screen
+    var t = seg(rv, .38, .78);
+    gl.style.opacity = seg(rv, .34, .5).toFixed(3);
+    riseWords(gRise, t);
+    wordReveal(gWords, seg(rv, .5, 1.05));
+    var rb = revealG(gBand), bt = eo(seg(rb, .38, .95));
+    band.style.clipPath = 'inset(' + ((1 - bt) * 14).toFixed(2) + '% ' + ((1 - bt) * 18 + 0).toFixed(2) + '% 0)';
+    var th = throughG(gBand); bimg.style.transform = 'translate3d(0,' + ((th - .5) * -16).toFixed(2) + '%,0) scale(' + (1.12 - bt * .12).toFixed(3) + ')';
+    ips.forEach(function (o) {
+      var r = revealG(o.g), v = eo(seg(r, .38, .9)), th2 = throughG(o.g);
+      o.el.style.clipPath = 'inset(' + ((1 - v) * 100).toFixed(2) + '% 0 0 0)';
+      o.img.style.transform = 'translate3d(0,' + ((th2 - .5) * -18).toFixed(2) + '%,0) scale(' + (1.15 - v * .1).toFixed(3) + ')';
+    });
+  }
+
+  /* ---------- 5.2 wellness ---------- */
+  var well = $('#wellness'), gWell = G(well), wimgs = $$('.wimg', well), widx = $$('#widx li'), wcount = $('#wcount'), wN = wimgs.length;
+  well.style.height = (wN * 75 + 60) + 'vh';
+  function renderWell() {
+    var t = trackG(gWell), s = t * wN, k = Math.min(wN - 1, Math.floor(s));
+    wimgs.forEach(function (w, i) {
+      var v = i === 0 ? 1 : eio(clamp((s - i) * 2.4 + 1, 0, 1));                 // each image wipes up just before its step
+      w.style.clipPath = 'inset(' + ((1 - v) * 100).toFixed(2) + '% 0 0 0)';
+      var im = w.firstElementChild; if (im && im.tagName === 'IMG') im.style.transform = 'scale(' + (1.12 - v * .08 - clamp(s - i, 0, 1) * .04).toFixed(3) + ')';
+    });
+    widx.forEach(function (li, i) { li.classList.toggle('on', i === k); });
+    wcount.textContent = ('0' + (k + 1)).slice(-2) + ' / ' + ('0' + wN).slice(-2);
+  }
+
+  /* ---------- 5.3 / 5.4 videos + night ---------- */
+  var play = $('#play'), gPlay = G(play), recv = $('#recv'), night = $('#night'), gNight = G(night), nv = $('#nv'), nightv = $('#nightv'), nWords = splitWords($('#nh'));
+  function vis(o) { return SY + VH > o.top && SY < o.top + o.h; }
+  function playIf(v, on) { if (on) { if (v.preload !== 'auto') v.preload = 'auto'; if (v.paused) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } } else if (!v.paused) v.pause(); }
+  function renderNight() {
+    playIf(recv, vis(gPlay)); playIf(nv, vis(gNight));
+    var t = trackG(gNight), v = eio(seg(t, 0, .6));
+    nightv.style.clipPath = 'inset(' + ((1 - v) * 18).toFixed(2) + '% ' + ((1 - v) * 22).toFixed(2) + '%)';
+    wordReveal(nWords, seg(t, .35, .85), .22);
+  }
+
+  /* ---------- 6.0 residences ---------- */
+  var PLANS = [
+    ['3 + 1', 'Type I', 'Towers 2, 3, 4 & 5', '3,080', 'img/plan-31a.webp', [['Master bedroom', '12′5″ × 18′5″'], ['Living room', '15′ × 15′9″'], ['Family lounge', '16′8″ × 12′'], ['Kitchen', '14′2″ × 9′'], ['Balconies', '8′ front · 6′ side × 2']]],
+    ['3 + 1', 'Type II', 'Towers 3, 4 & 5', '3,570', 'img/plan-31b.webp', [['Master bedroom', '20′4″ × 12′6″'], ['Walk-in wardrobe', '7′ × 7′5″'], ['Living room', '16′7″ × 18′'], ['Family lounge, dining', '25′5″ × 11′'], ['Pooja room', '5′1″ × 5′']]],
+    ['4 + 1', 'Type I', 'Tower 1', '4,070', 'img/plan-41a.webp', [['Master bedroom', '21′ × 14′'], ['Living', '20′2″ × 19′10″'], ['Dining, lounge', '27′5″ × 11′10″'], ['Plunge pool', 'Yes'], ['Balconies', '12′2″ living · 14′6″ side']]],
+    ['4 + 1', 'Type II', 'Tower 1', '4,600', 'img/plan-41b.webp', [['Master bedroom', '13′3″ × 20′'], ['Living room', '20′11″ × 12′4″'], ['Family lounge', '19′4″ × 16′8″'], ['Plunge pool', 'Yes'], ['Balcony, living', '10′ wide']]],
+    ['4 + 2', 'Type I', 'Tower 1', '5,600', 'img/plan-42.webp', [['Master bedroom', '12′ × 16′'], ['Living', '17′6″ × 19′11″'], ['Dining', '24′10″ × 11′10″'], ['Staff quarter', '7′10″ × 8′11″'], ['Balconies', '10′ living · 8′2″ master']]],
+    ['5 + 2', 'Types I & II', 'Tower 6', '6,500–7,000', 'img/plan-52.webp', [['Living, dining', '26′1″ × 20′6″'], ['Family lounge', '36′7″ × 13′2″'], ['Dry kitchen', '17′3″ × 13′'], ['Wet kitchen', '9′6″ × 16′1″'], ['Staff quarters', '2 × 7′6″ × 7′10″']]]
+  ];
+  var typ = $('#typ'), pimg = $('#pimg'), hdata = $('#hdata'), homes = $('#residences'), gHomes = G(homes), curPlan = -1, hprog = $('#hprog');
+  PLANS.forEach(function (p, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.id = 'tab-' + i; b.setAttribute('aria-selected', 'false'); b.tabIndex = -1;
+    b.innerHTML = '<span class="n">' + p[0] + '</span><span>' + p[1] + '</span><span class="tnum" style="font-weight:400">' + p[3] + '</span><span class="dot"></span>';
+    b.addEventListener('click', function () { goPlan(i); });
+    b.addEventListener('keydown', function (e) { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); var n = (i + (e.key === 'ArrowDown' ? 1 : PLANS.length - 1)) % PLANS.length; goPlan(n); $('#tab-' + n).focus(); } });
+    typ.appendChild(b);
+    var im = document.createElement('img'); im.src = p[4]; im.alt = p[0] + ' ' + p[1] + ' floor plan'; im.loading = 'lazy'; pimg.appendChild(im);
+  });
+  function showPlan(i) {
+    if (i === curPlan) return; curPlan = i; var p = PLANS[i];
+    $$('button', typ).forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+    $$('img', pimg).forEach(function (im, k) { im.classList.toggle('on', k === i); });
+    hdata.innerHTML = '<div class="fade-in" style="display:grid;gap:16px"><div class="sz tnum">' + p[3] + '<small>sq ft · ' + p[0] + ' ' + p[1] + ' · ' + p[2] + '</small></div><div class="rooms">' + p[5].map(function (r) { return '<div><span>' + r[0] + '</span><span>' + r[1] + '</span></div>'; }).join('') + '</div></div>';
+  }
+  function goPlan(i) { if (VW <= 980) { showPlan(i); return; } var y = gHomes.top + (gHomes.h - VH) * ((i + .5) / PLANS.length); scrollToY(y, 1.1); showPlan(i); }
+  showPlan(0);
+  function renderHomes() { if (VW <= 980) return; var t = trackG(gHomes); hprog.style.transform = 'scaleX(' + t.toFixed(4) + ')'; showPlan(Math.min(PLANS.length - 1, Math.floor(t * PLANS.length * .999))); }
+
+  /* ---------- 7.0 place: map follows the list ---------- */
+  var PLACES = [['Chandigarh International Airport', 'The anchor of the Aerocity corridor', 3.2, '5 min', 'Airport', -125], ['R Rudra International School', 'CBSE, within Aerocity', 0.6, '', 'R Rudra', 40], ['Mohali IT City', '300+ IT companies', 1.1, '', 'IT City', -60], ['Kapoor Hospital', 'Multispeciality and emergency', 2.0, '', 'Kapoor', 95], ['Manav Rachna International School', 'K-12, CBSE', 5.4, '', 'Manav Rachna', 150], ['Indian School of Business', 'Knowledge City', 6.7, '', 'ISB', -10], ['Chandigarh city centre', 'Sector 17', 8.1, '', 'Chandigarh', -95], ['Fortis Hospital, Mohali', 'JCI and NABH accredited', 11.2, '', 'Fortis', 20], ['IISER Mohali', 'National research university', 12, '', 'IISER', 175], ['QuarkCity and STPI', 'IT SEZ, Sector 75', 14.4, '', 'QuarkCity', 120]];
+  var dist = $('#dist');
+  dist.innerHTML = PLACES.map(function (p, i) { return '<li data-i="' + i + '"><div><b>' + p[0] + '</b><small>' + p[1] + '</small></div><span class="km">' + (p[3] ? p[3].replace(' min', '<i>min</i>') : p[2].toFixed(1) + '<i>km</i>') + '</span></li>'; }).join('');
+  var map = $('#map'), CX = 300, CY = 300, R = 255, maxKm = 15, svg = '';
+  [5, 10, 15].forEach(function (k) { var r = k / maxKm * R; svg += '<circle class="ring" cx="' + CX + '" cy="' + CY + '" r="' + r + '" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/><text x="' + (CX + 4) + '" y="' + (CY - r - 6) + '" class="rt">' + k + ' km</text>'; });
+  var PT = [];
+  PLACES.forEach(function (p, i) {
+    var r = Math.max(28, p[2] / maxKm * R), a = p[5] * Math.PI / 180, x = CX + Math.cos(a) * r, y = CY + Math.sin(a) * r; PT.push([x, y]);
+    var right = Math.cos(a) >= 0, lx = x + (right ? 10 : -10);
+    svg += '<line class="ray" data-i="' + i + '" x1="' + CX + '" y1="' + CY + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '"/>';
+    svg += '<g class="lb" data-i="' + i + '" style="opacity:0"><circle class="nd" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.5"/><text x="' + lx.toFixed(1) + '" y="' + (y + 3.5).toFixed(1) + '" text-anchor="' + (right ? 'start' : 'end') + '">' + p[4] + '</text></g>';
+  });
+  svg += '<circle class="pulse" id="mpulse" cx="0" cy="0" r="6" style="opacity:0"/><circle class="runner" id="mrun" cx="' + CX + '" cy="' + CY + '" r="4" style="opacity:0"/>';
+  svg += '<circle class="home" cx="' + CX + '" cy="' + CY + '" r="7"/><text x="' + (CX + 12) + '" y="' + (CY + 22) + '" class="rt" style="fill:var(--espresso);font-size:15px">Aveda Arenium</text>';
+  svg += '<text class="km-big" id="mkm" x="20" y="580">—</text>';
+  map.innerHTML = svg;
+  var rays = $$('.ray', map).map(function (l) { var len = Math.hypot(l.x2.baseVal.value - CX, l.y2.baseVal.value - CY); l.style.strokeDasharray = len + ' ' + len; l.style.strokeDashoffset = len; l._len = len; return l; });
+  var rings = $$('.ring', map), mlbs = $$('.lb', map), dli = $$('li', dist), mrun = $('#mrun'), mpulse = $('#mpulse'), mkm = $('#mkm');
+  var place = $('#location'), gPlace = G(place), gList = G(dist), liOff = [], activeP = -1;
+  function sizePlace() { var y = scrollY; liOff = dli.map(function (li) { var r = li.getBoundingClientRect(); return r.top + y - gList.top + r.height / 2; }); }
+  function renderPlace() {
+    var rv = revealG(gPlace), t = seg(rv, .35, 1.1);
+    rings.forEach(function (r, i) { r.setAttribute('stroke-dashoffset', (1 - eo(clamp(t * 2 - i * .3, 0, 1))).toFixed(3)); });
+    // active row = the one nearest the middle of the screen
+    var mid = SY + VH * .55 - gList.top, k = 0, bd = 1e9;
+    liOff.forEach(function (y, i) { var d = Math.abs(y - mid); if (d < bd) { bd = d; k = i; } });
+    rays.forEach(function (l, i) {
+      var drawnRay = i < k ? 1 : (i === k ? 1 : eo(clamp(t * 1.4 - i * .08, 0, 1)) * .0);
+      var v = i <= k ? 1 : 0;
+      l.style.strokeDashoffset = (l._len * (1 - (i < k ? 1 : i === k ? 1 : 0))).toFixed(1);
+      l.classList.toggle('on', i === k);
+      mlbs[i].style.opacity = i === k ? 1 : (i < k ? .55 : 0);
+      mlbs[i].classList.toggle('on', i === k);
+    });
+    // runner travels along the active ray as its row passes the middle
+    var y0 = liOff[k] || 0, h = (dli[k] ? dli[k].offsetHeight : 80), lp = clamp(.5 + (mid - y0) / h, 0, 1);
+    var P = PT[k]; mrun.setAttribute('cx', (CX + (P[0] - CX) * lp).toFixed(1)); mrun.setAttribute('cy', (CY + (P[1] - CY) * lp).toFixed(1)); mrun.style.opacity = rv > .5 ? 1 : 0;
+    mpulse.setAttribute('cx', P[0].toFixed(1)); mpulse.setAttribute('cy', P[1].toFixed(1)); mpulse.setAttribute('r', (6 + lp * 10).toFixed(1)); mpulse.style.opacity = (1 - lp).toFixed(2);
+    if (k !== activeP) { activeP = k; dli.forEach(function (li, i) { li.classList.toggle('on', i === k); }); mkm.textContent = PLACES[k][3] || (PLACES[k][2].toFixed(1) + ' km'); }
+  }
+
+  /* ---------- 7.1 corridor ---------- */
+  var corr = $('#corridor'), gCorr = G(corr), tlline = $('#tlline'), tlItems = $$('.tl-item', corr), stRows = $$('#status > div');
+  function renderCorr() {
+    if (VW <= 820) { tlItems.concat(stRows).forEach(function (e) { e.style.opacity = 1; e.style.transform = 'none'; }); return; }
+    var t = trackG(gCorr), lt = seg(t, .05, .62);
+    tlline.style.transform = 'scaleX(' + lt.toFixed(4) + ')';
+    tlItems.forEach(function (e, i) { var v = eo(seg(lt, i / 4 - .02, i / 4 + .16)); e.style.opacity = v.toFixed(3); e.style.transform = 'translate3d(0,' + ((1 - v) * 40).toFixed(1) + 'px,0)'; });
+    stRows.forEach(function (e, i) { var v = eo(seg(t, .62 + i * .04, .74 + i * .04)); e.style.opacity = v.toFixed(3); e.style.transform = 'translate3d(0,' + ((1 - v) * 16).toFixed(1) + 'px,0)'; });
+  }
+
+  /* ---------- 8.0 recognition: odometer counters ---------- */
+  var recog = $('#recognition'), gRec = G(recog), rRise = splitWords($('#rh'), 'rise'), gCounts = G($('#counts'));
+  var odos = $$('.odo').map(function (el) {
+    var to = String(el.dataset.to), digits = to.split('').map(function (d, i) {
+      var col = document.createElement('span'); col.className = 'dg';
+      var spins = 1 + (to.length - i);                                         // left digits spin less
+      var html = ''; for (var s = 0; s <= spins * 10 + +d; s++) html += '<span>' + (s % 10) + '</span>';
+      col.innerHTML = html; el.appendChild(col); return { col: col, steps: spins * 10 + +d };
+    });
+    el.setAttribute('aria-label', to); return digits;
+  });
+  var awards = [['Red Dot', 'Winner', '2023'], ['Asia Pacific Property Awards', 'Winner', '2016, 2017'], ['A’ Design Award', 'Gold', '2017'], ['German Design Award', 'Special Mention', '2015'], ['World Architecture Festival', 'Finalist', 'Studio Symbiosis'], ['Iconic Awards', 'Concept Winner', '2014'], ['WADe India', 'Excellence Award', '2018'], ['Forbes India', 'The Bold Club', 'India’s top 30 architects'], ['40 under 40', 'European Architecture & Design', 'Award'], ['Estrade Real Estate Awards', 'Award', '2015'], ['LEAF Awards', 'Recognised', 'Studio Symbiosis'], ['BUILD Architecture Awards', 'Recognised', 'Studio Symbiosis']];
+  $('#awards').innerHTML = awards.map(function (a) { return '<div class="aw"><span class="lbl muted">' + a[0] + '</span><div style="display:grid;gap:8px"><span class="ttl">' + a[1] + '</span><span class="yr">' + a[2] + '</span></div></div>'; }).join('');
+  var awEls = $$('.aw'), gAw = G($('#awards'));
+  function renderRec() {
+    riseWords(rRise, seg(revealG(gRec), .3, .75));
+    var ct = eio(seg(revealG(gCounts), .3, .85));
+    odos.forEach(function (ds) { ds.forEach(function (d) { var x = d.steps * ct, i = Math.floor(x), fr = x - i, e = fr < .5 ? 0 : eio((fr - .5) * 2), pos = Math.min(d.steps, i + e); d.col.style.transform = 'translate3d(0,' + (-pos * .92).toFixed(3) + 'em,0)'; }); });
+    var at = seg(revealG(gAw), .2, .9);
+    awEls.forEach(function (d, i) { var v = eo(clamp(at * 2.2 - (i % 4) * .12 - Math.floor(i / 4) * .25, 0, 1)); d.style.opacity = v.toFixed(3); d.style.transform = 'translate3d(0,' + ((1 - v) * 30).toFixed(1) + 'px,0)'; });
+  }
+
+  /* ---------- promise: text + building rise together ---------- */
+  var quote = $('#promise-sec'), gQ = G(quote), qWords = splitWords($('#promise')), qbld = $('#qbld'), qlogo = $('#qlogo');
+  function renderQuote() {
+    var t = trackG(gQ), rv = revealG(gQ);
+    wordReveal(qWords, seg(t, 0, .6), .26);
+    var b = eio(seg(rv, .5, 1) * .35 + seg(t, 0, .7) * .65);
+    qbld.style.transform = 'translate3d(0,' + ((1 - b) * 60).toFixed(2) + '%,0)';
+    var l = eo(seg(t, .25, .8)); qlogo.style.opacity = l.toFixed(3); qlogo.style.transform = 'translate3d(-50%,' + ((1 - l) * 40 - t * 10).toFixed(1) + 'px,0)';
+  }
+
+  /* ---------- form ---------- */
+  $('#lead').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var n = $('#f-name').value.trim(), ph = $('#f-phone').value.replace(/[^\d]/g, '');
+    if (!n) { $('#err').textContent = 'Add your name so we know who to ask for.'; $('#f-name').focus(); return; }
+    if (ph.length < 10) { $('#err').textContent = 'Enter a mobile number with at least 10 digits.'; $('#f-phone').focus(); return; }
+    if (!$('#f-ok').checked) { $('#err').textContent = 'Tick the box to let us contact you.'; $('#f-ok').focus(); return; }
+    $('#err').textContent = ''; $('#lead').hidden = true; $('#thanks').hidden = false; $('#thx-t').textContent = 'Thank you, ' + n.split(' ')[0] + '.';
+  });
+
+  /* ---------- nav tone ---------- */
+  var nav = $('#nav'), darkG = [gPlay, gNight, gCorr, gRec, gQ, G($('#enquire')), G($('#foot'))], lastNav = '';
+  function renderNav() {
+    var y = SY + 30, dark = false, inFilm = y < gFilm.top + gFilm.h;
+    if (inFilm) dark = filmTone === 'dark'; else darkG.forEach(function (o) { if (y >= o.top && y < o.top + o.h) dark = true; });
+    var k = (dark ? 'd' : 'l') + (inFilm ? 'f' : 's'); if (k === lastNav) return; lastNav = k;
+    nav.classList.toggle('dark', dark); nav.classList.toggle('solid', !inFilm);
+  }
+
+  /* ---------- loop: only sections near the viewport do any work ---------- */
+  var R = [[gFilm, renderFilm], [gPlan, renderPlan], [gArr, renderArr], [gGar, renderGarden], [gWell, renderWell], [gPlay, function () {}], [gNight, renderNight], [gHomes, renderHomes], [gPlace, renderPlace], [gCorr, renderCorr], [gRec, renderRec], [gQ, renderQuote]];
+  var dirty = true;
+  function render() { R.forEach(function (r) { if (near(r[0])) r[1](); }); if (!near(gPlay) && !recv.paused) recv.pause(); if (!near(gNight) && !nv.paused) nv.pause(); renderNav(); }
+  function layout() { sizeCanvas(); sizeArr(); measure(); sizePlace(); dirty = true; dirtyFilm = true; }
+  var lenis = null;
+  if (!reduce && window.Lenis) { lenis = new Lenis({ lerp: .09, smoothWheel: true, wheelMultiplier: .9 }); lenis.stop(); lenis.on('scroll', function (e) { SY = e.animatedScroll; dirty = true; }); }
+  addEventListener('scroll', function () { if (!lenis) { SY = scrollY; dirty = true; } }, { passive: true });
+  var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { mobile = Math.min(screen.width, innerWidth) < 820 ? mobile : mobile; layout(); }, 120); });
+  function scrollToY(y, d) { if (lenis) lenis.scrollTo(y, { duration: d || 1.4 }); else scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' }); }
+  $$('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var id = a.getAttribute('href'), el = id === '#top' ? film : $(id); if (!el) return; e.preventDefault(); scrollToY(el.getBoundingClientRect().top + scrollY); }); });
+  function raf(time) { if (lenis) lenis.raf(time); if (lenis) SY = lenis.animatedScroll; if (dirty || dirtyFilm) { dirty = false; render(); } requestAnimationFrame(raf); }
+  layout(); SY = scrollY;
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  addEventListener('load', function () { layout(); setTimeout(layout, 600); });
+  pumpFetch();
+  requestAnimationFrame(raf);
+  window.__aa = { bmp: bmp, blobs: blobs, stats: function () { return { blobs: Object.keys(blobs).length, bitmaps: Object.keys(bmp).length, total: totalUnits }; } };
+})();
+</script>
+
+</body>
+</html>
