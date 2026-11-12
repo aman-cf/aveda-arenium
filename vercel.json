@@ -1,7 +1,23 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/blog", "destination": "/api/blog" },
+    { "source": "/blog/:slug", "destination": "/api/blog?slug=:slug" }
+  ],
   "headers": [
     { "source": "/f/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] }
+    { "source": "/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
+    { "source": "/assets/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
+    { "source": "/assets/(site\\.css|site\\.js|config\\.js)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+    ] }
+  ],
+  "redirects": [
+    { "source": "/aveda", "destination": "/aveda-arenium", "permanent": true },
+    { "source": "/projects/aveda-arenium", "destination": "/aveda-arenium", "permanent": true }
   ]
 }
