@@ -147,7 +147,6 @@
     <li><a href="/" aria-current="page">Home</a></li>
     <li><a href="/aveda-arenium">Aveda Arenium<span class="sub">Project</span></a></li>
     <li><a href="/connect">Connect</a></li>
-    <li><a href="/blog">Journal</a></li>
   </ul>
   <a class="gnav-wm" href="/" aria-label="DKG Landcorp, home">DKG Landcorp</a>
   <div class="gnav-end">
@@ -320,14 +319,6 @@
   </div>
 </section>
 
-<!-- ============ 10.0 journal ============ -->
-<section class="sec pad" id="journal" aria-label="From the journal">
-  <div class="wrap">
-    <div class="split"><span class="lbl muted">10.0 — Journal</span><div class="rc" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap"><h2 class="dxl">From the <em>journal</em>.</h2><a class="tl" href="/blog">All articles<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 L8.5 1.5 M3 1.5 H8.5 V7" fill="none" stroke="currentColor"/></svg></a></div></div>
-    <div class="posts" id="posts"></div>
-  </div>
-</section>
-
 <!-- ============ enquiry ============ -->
 <section class="sec pad enq on-dark" id="enquire" data-tone="dark" aria-label="Enquire">
   <div class="wrap split">
@@ -356,7 +347,7 @@
 <footer class="gfoot" id="foot" data-tone="dark">
   <div class="gfoot-top">
     <div class="gfoot-news">
-      <span class="lbl">Journal</span>
+      <span class="lbl">Updates</span>
       <p>New launches, site progress and the Tricity market, once a month.</p>
       <form class="lf" data-type="newsletter" data-need="email" style="gap:8px">
         <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -364,7 +355,7 @@
         <p class="err" role="alert" style="color:#f08a7f"></p>
       </form>
     </div>
-    <div><span class="lbl">Explore</span><a href="/">Home</a><a href="/aveda-arenium">Aveda Arenium</a><a href="/connect">Connect</a><a href="/blog">Journal</a><a href="/contact">Contact us</a></div>
+    <div><span class="lbl">Explore</span><a href="/">Home</a><a href="/aveda-arenium">Aveda Arenium</a><a href="/connect">Connect</a><a href="/contact">Contact us</a></div>
     <div><span class="lbl">Work with us</span><a href="/connect#careers">Careers</a><a href="/connect#partners">Channel partners</a><a href="/connect#land">Land owners &amp; JV</a><a href="/connect#vendors">Vendors &amp; investors</a></div>
     <div><span class="lbl">Corporate office</span><span>World Tech 83, Ground Floor, Plot I-9, IT City Road, Sector 83, Mohali, Punjab 140306</span><a data-phone href="#"></a><a data-email href="#"></a>
       <span style="display:flex;gap:16px;margin-top:8px" data-hide-empty><a data-social="instagram" href="#">Instagram</a><a data-social="facebook" href="#">Facebook</a><a data-social="youtube" href="#">YouTube</a><a data-social="linkedin" href="#">LinkedIn</a></span></div>
@@ -378,8 +369,7 @@
     <a href="/" aria-current="page"><small>01</small><em>Home</em></a>
     <a href="/aveda-arenium"><small>02</small><em>Aveda Arenium</em></a>
     <a href="/connect"><small>03</small><em>Connect</em></a>
-    <a href="/blog"><small>04</small><em>Journal</em></a>
-    <a href="/contact"><small>05</small><em>Contact us</em></a>
+    <a href="/contact"><small>04</small><em>Contact us</em></a>
   </nav>
   <div class="gmenu-foot lbl">
     <span>World Tech 83, IT City Road, Sector 83, Mohali</span>
@@ -493,7 +483,7 @@
 
   /* journal: latest three posts (from the CMS via /api/blog, starter posts as a fallback) */
   function card(p) { return '<a class="post up in" href="/blog/' + p.slug + '"><div class="ip"><img src="' + p.image + '" alt="' + (p.imageAlt || '').replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"></div><span class="lbl muted">' + p.category + ' · ' + p.readMins + ' min read</span><h3>' + p.title + '</h3><p class="body muted">' + p.excerpt + '</p></a>'; }
-  fetch('/api/blog?format=json&limit=3').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) { $('#posts').innerHTML = (j.posts || []).map(card).join(''); setTimeout(layout, 50); }).catch(function () { $('#journal').hidden = true; setTimeout(layout, 50); });
+  if ($('#posts')) fetch('/api/blog?format=json&limit=3').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) { $('#posts').innerHTML = (j.posts || []).map(card).join(''); setTimeout(layout, 50); }).catch(function () { $('#journal').hidden = true; setTimeout(layout, 50); });
 })();
 </script>
 </body>

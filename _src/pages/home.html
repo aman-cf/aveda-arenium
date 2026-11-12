@@ -285,6 +285,7 @@
   </div>
 </section>
 
+<!--@journal-->
 <!-- ============ 10.0 journal ============ -->
 <section class="sec pad" id="journal" aria-label="From the journal">
   <div class="wrap">
@@ -292,6 +293,8 @@
     <div class="posts" id="posts"></div>
   </div>
 </section>
+
+<!--@/journal-->
 
 <!-- ============ enquiry ============ -->
 <section class="sec pad enq on-dark" id="enquire" data-tone="dark" aria-label="Enquire">
@@ -394,7 +397,7 @@
 
   /* journal: latest three posts (from the CMS via /api/blog, starter posts as a fallback) */
   function card(p) { return '<a class="post up in" href="/blog/' + p.slug + '"><div class="ip"><img src="' + p.image + '" alt="' + (p.imageAlt || '').replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"></div><span class="lbl muted">' + p.category + ' · ' + p.readMins + ' min read</span><h3>' + p.title + '</h3><p class="body muted">' + p.excerpt + '</p></a>'; }
-  fetch('/api/blog?format=json&limit=3').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) { $('#posts').innerHTML = (j.posts || []).map(card).join(''); setTimeout(layout, 50); }).catch(function () { $('#journal').hidden = true; setTimeout(layout, 50); });
+  if ($('#posts')) fetch('/api/blog?format=json&limit=3').then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (j) { $('#posts').innerHTML = (j.posts || []).map(card).join(''); setTimeout(layout, 50); }).catch(function () { $('#journal').hidden = true; setTimeout(layout, 50); });
 })();
 </script>
 </body>

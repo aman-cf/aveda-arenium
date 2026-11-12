@@ -9,6 +9,9 @@ import { fileURLToPath } from 'node:url';
 const SRC = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(SRC, '..');
 const SITE = 'https://dkglandcorp.com';
+// The Journal (blog) is built but switched off for launch. Set to true to bring back its links and home section,
+// and restore the /blog rewrites in vercel.json (see docs/LEADS.md).
+const JOURNAL = false;
 const V = '20261112';                                   // bump to refresh cached CSS/JS
 
 const arrow = '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 L8.5 1.5 M3 1.5 H8.5 V7" fill="none" stroke="currentColor"/></svg>';
@@ -51,8 +54,8 @@ ${extra}
     <li><a href="/"${cur('home')}>Home</a></li>
     <li><a href="/aveda-arenium"${cur('aveda')}>Aveda Arenium<span class="sub">Project</span></a></li>
     <li><a href="/connect"${cur('connect')}>Connect</a></li>
-    <li><a href="/blog"${cur('blog')}>Journal</a></li>
-  </ul>
+${JOURNAL ? `    <li><a href="/blog"${cur('blog')}>Journal</a></li>
+` : ''}  </ul>
   ${wm}
   <div class="gnav-end">
     <a class="u hide-m" href="/contact"${cur('contact')}>Contact us</a>
@@ -69,8 +72,8 @@ ${extra}
     <a href="/"${cur('home')}><small>01</small><em>Home</em></a>
     <a href="/aveda-arenium"${cur('aveda')}><small>02</small><em>Aveda Arenium</em></a>
     <a href="/connect"${cur('connect')}><small>03</small><em>Connect</em></a>
-    <a href="/blog"${cur('blog')}><small>04</small><em>Journal</em></a>
-    <a href="/contact"${cur('contact')}><small>05</small><em>Contact us</em></a>
+${JOURNAL ? `    <a href="/blog"${cur('blog')}><small>04</small><em>Journal</em></a>
+` : ''}    <a href="/contact"${cur('contact')}><small>${JOURNAL ? '05' : '04'}</small><em>Contact us</em></a>
   </nav>
   <div class="gmenu-foot lbl">
     <span>World Tech 83, IT City Road, Sector 83, Mohali</span>
@@ -113,7 +116,7 @@ ${extra}
     return `<footer class="gfoot" id="foot" data-tone="dark">
   <div class="gfoot-top">
     <div class="gfoot-news">
-      <span class="lbl">Journal</span>
+      <span class="lbl">Updates</span>
       <p>New launches, site progress and the Tricity market, once a month.</p>
       <form class="lf" data-type="newsletter" data-need="email" style="gap:8px">
         <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -121,7 +124,7 @@ ${extra}
         <p class="err" role="alert" style="color:#f08a7f"></p>
       </form>
     </div>
-    <div><span class="lbl">Explore</span><a href="/">Home</a><a href="/aveda-arenium">Aveda Arenium</a><a href="/connect">Connect</a><a href="/blog">Journal</a><a href="/contact">Contact us</a></div>
+    <div><span class="lbl">Explore</span><a href="/">Home</a><a href="/aveda-arenium">Aveda Arenium</a><a href="/connect">Connect</a>${JOURNAL ? '<a href="/blog">Journal</a>' : ''}<a href="/contact">Contact us</a></div>
     <div><span class="lbl">Work with us</span><a href="/connect#careers">Careers</a><a href="/connect#partners">Channel partners</a><a href="/connect#land">Land owners &amp; JV</a><a href="/connect#vendors">Vendors &amp; investors</a></div>
     <div><span class="lbl">Corporate office</span><span>World Tech 83, Ground Floor, Plot I-9, IT City Road, Sector 83, Mohali, Punjab 140306</span><a data-phone href="#"></a><a data-email href="#"></a>
       <span style="display:flex;gap:16px;margin-top:8px" data-hide-empty><a data-social="instagram" href="#">Instagram</a><a data-social="facebook" href="#">Facebook</a><a data-social="youtube" href="#">YouTube</a><a data-social="linkedin" href="#">LinkedIn</a></span></div>
@@ -141,6 +144,7 @@ ${extra}`;
 // <!--@head {"title":"…","desc":"…","path":"/"}-->  <!--@nav home-->  <!--@nav aveda aveda-->  <!--@chrome home-->  <!--@footer-->  <!--@scripts-->
 function fill(src) {
   return src
+    .replace(/<!--@journal-->[\s\S]*?<!--@\/journal-->\n*/g, (m) => (JOURNAL ? m.replace(/<!--@\/?journal-->\n?/g, '') : ''))
     .replace(/<!--@head (\{.*?\})-->/s, (_, j) => parts.head(JSON.parse(j)))
     .replace(/<!--@nav ?(\w*) ?(\w*)-->/, (_, c, b) => parts.nav(c, b || 'dkg'))
     .replace(/<!--@chrome ?(\w*)-->/, (_, c) => parts.chrome(c))
