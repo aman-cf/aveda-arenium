@@ -138,12 +138,13 @@
   } else $$('.up').forEach(function (el) { el.classList.add('in'); });
 
   /* ---------- nav tone (all pages) ---------- */
-  var nav = $('#nav'), darks = $$('[data-tone="dark"]'), film = ownScroll ? $('.film') : null, lastK = '';
+  var nav = $('#nav'), darks = $$('[data-tone="dark"]'), clears = $$('[data-nav-clear]'), film = ownScroll ? $('.film') : null, lastK = '';
   function tone() {
     if (!nav) return; var y = 30, dark = false, sy = window.scrollY || 0;
     for (var i = 0; i < darks.length; i++) { var r = darks[i].getBoundingClientRect(); if (r.top <= y && r.bottom > y) { dark = true; break; } }
     // on the Aveda page the nav stays clear over the film, and turns solid once the story sections begin
-    var solid = film ? film.getBoundingClientRect().bottom <= 60 : sy > 40, k = (dark ? 'd' : 'l') + (solid ? 's' : '');
+    var clear = false; for (var j = 0; j < clears.length; j++) { var rc = clears[j].getBoundingClientRect(); if (rc.top <= y && rc.bottom > 60) { clear = true; break; } }
+    var solid = film ? film.getBoundingClientRect().bottom <= 60 : (sy > 40 && !clear), k = (dark ? 'd' : 'l') + (solid ? 's' : '');
     if (k !== lastK) { lastK = k; nav.classList.toggle('dark', dark && solid || dark && !film); nav.classList.toggle('solid', solid); }
   }
   addEventListener('scroll', tone, { passive: true }); addEventListener('resize', tone); tone();
