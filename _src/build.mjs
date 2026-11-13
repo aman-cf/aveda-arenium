@@ -47,12 +47,12 @@ ${extra}
   nav(current = '', brand = 'dkg') {
     const cur = (k) => (k === current ? ' aria-current="page"' : '');
     const wm = brand === 'aveda'
-      ? `<a class="gnav-wm" href="/aveda-arenium" aria-label="Aveda Arenium, top of page">Aveda Arenium<small>by DKG Landcorp</small></a>`
+      ? `<a class="gnav-wm" href="/" aria-label="Aveda Arenium by DKG Landcorp, go to the DKG Landcorp home page">Aveda Arenium<small>by DKG Landcorp</small></a>`
       : `<a class="gnav-wm" href="/" aria-label="DKG Landcorp, home">DKG Landcorp</a>`;
     return `<header class="gnav${brand === 'aveda' ? ' pre' : ''}" id="nav">
   <ul class="gnav-links">
     <li><a href="/"${cur('home')}>Home</a></li>
-    <li><a href="/aveda-arenium"${cur('aveda')}>Aveda Arenium<span class="sub">Project</span></a></li>
+    <li><a class="gbtn" href="/aveda-arenium"${cur('aveda')}>Aveda Arenium<span class="sub">· Project</span></a></li>
     <li><a href="/connect"${cur('connect')}>Connect</a></li>
 ${JOURNAL ? `    <li><a href="/blog"${cur('blog')}>Journal</a></li>
 ` : ''}  </ul>
