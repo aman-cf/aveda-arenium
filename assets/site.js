@@ -138,6 +138,7 @@
   } else $$('.up').forEach(function (el) { el.classList.add('in'); });
 
   /* ---------- nav tone (all pages) ---------- */
+  var navbgs = $$('[data-nav-bg]'), lastBg = null;
   var nav = $('#nav'), darks = $$('[data-tone="dark"]'), clears = $$('[data-nav-clear]'), film = ownScroll ? $('.film') : null, lastK = '';
   function tone() {
     if (!nav) return; var y = 30, dark = false, sy = window.scrollY || 0;
@@ -145,6 +146,8 @@
     // on the Aveda page the nav stays clear over the film, and turns solid once the story sections begin
     var clear = false; for (var j = 0; j < clears.length; j++) { var rc = clears[j].getBoundingClientRect(); if (rc.top <= y && rc.bottom > 60) { clear = true; break; } }
     var solid = film ? film.getBoundingClientRect().bottom <= 60 : (sy > 40 && !clear), k = (dark ? 'd' : 'l') + (solid ? 's' : '');
+    var bg = ''; for (var b2 = 0; b2 < navbgs.length; b2++) { var rb = navbgs[b2].getBoundingClientRect(); if (rb.top <= y && rb.bottom > y) { bg = navbgs[b2].getAttribute('data-nav-bg'); break; } }
+    if (bg !== lastBg) { lastBg = bg; if (bg) nav.style.setProperty('--navbg', bg); else nav.style.removeProperty('--navbg'); }
     if (k !== lastK) { lastK = k; nav.classList.toggle('dark', dark && solid || dark && !film); nav.classList.toggle('solid', solid); }
   }
   addEventListener('scroll', tone, { passive: true }); addEventListener('resize', tone); tone();

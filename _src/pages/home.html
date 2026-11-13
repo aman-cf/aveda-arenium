@@ -43,7 +43,7 @@
 .legacy { background: var(--espresso); color: var(--bone); position: relative; overflow: hidden; }
 .legacy-in { position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; align-items: center; }
 .legacy-flower { margin: 0; position: relative; align-self: stretch; }
-.legacy-flower img { position: absolute; left: -6vw; top: 50%; width: min(64vw, 980px); height: auto; transform-origin: 18% 50%; will-change: transform, opacity; opacity: 0; filter: drop-shadow(0 30px 60px #00000080); }
+.legacy-flower img { position: absolute; left: -6vw; top: 50%; width: min(64vw, 980px); height: auto; transform-origin: 22% 55%; will-change: transform, opacity; opacity: 0; filter: drop-shadow(0 30px 60px #00000080); }
 .legacy-txt { display: grid; gap: 28px; align-content: center; padding: clamp(96px, 14vh, 160px) var(--gutr) clamp(96px, 14vh, 160px) clamp(16px, 3vw, 48px); position: relative; z-index: 1; }
 .legacy-txt .body { color: #f4efe9cc; max-width: 520px; margin: 0; }
 .legacy-txt .body b { color: var(--bone); font-weight: 600; }
@@ -154,7 +154,8 @@
 .door:hover img { transform: scale(1.05); }
 .door-t { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 16px; display: grid; gap: 10px; }
 .door-t .ttl { font-size: clamp(30px, 2.6vw, 40px); }
-.door-t .tl { color: var(--bone); }
+.dkg .door, .dkg .door .ttl, .dkg .door .lbl, .dkg .door .tl { color: #fffaf3; }
+.door::after { background: linear-gradient(to top, #161211e6 0%, #16121173 45%, #16121100 75%) !important; }
 @media (max-width: 820px) { .doors { grid-template-columns: 1fr; } .door { aspect-ratio: 4/3; } }
 
 .posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 48px; }
@@ -237,7 +238,7 @@
 </section>
 
 <!-- ============ 2.0 built works (horizontal) ============ -->
-<section class="sec works" id="works" aria-label="Built works">
+<section class="sec works" id="works" data-nav-bg="#efe4d2" aria-label="Built works">
   <div class="hz-in">
     <div class="htrack" id="htrack">
       <div class="hintro">
@@ -658,8 +659,8 @@
 
   function render() {
     // legacy: the metal flower blooms open as the section arrives
-    // starts only once a quarter of the flower is on screen, then blooms open with a long, slow turn
-    if (near(gFlower)) { var fvis = (SY + VH - gFlower.top) / gFlower.h, fl = seg(fvis, .3, 1.2), fe = eio(fl); flowerImg.style.opacity = clamp(fl * 2.2, 0, 1).toFixed(3); flowerImg.style.filter = 'blur(' + ((1 - fe) * 14).toFixed(1) + 'px) drop-shadow(0 30px 60px #00000080)'; flowerImg.style.transform = 'translate3d(' + ((1 - fe) * -18).toFixed(2) + '%,-50%,0) scale(' + (.38 + fe * .62).toFixed(4) + ') rotate(' + ((1 - fe) * -95).toFixed(2) + 'deg)'; }
+    // starts once a quarter of the flower is on screen: a slow, weighted settle, then a barely-there drift
+    if (near(gFlower)) { var fvis = (SY + VH - gFlower.top) / gFlower.h, fe = eio(seg(fvis, .25, 1.1)), fdr = through(gFlower) - .5; flowerImg.style.opacity = fe.toFixed(3); flowerImg.style.transform = 'translate3d(' + ((1 - fe) * -4).toFixed(2) + '%,' + (-50 + fdr * -6).toFixed(2) + '%,0) scale(' + (.93 + fe * .07).toFixed(4) + ') rotate(' + ((1 - fe) * -9 + fdr * 5).toFixed(2) + 'deg)'; }
     ips.forEach(function (p) { if (!near(p.o)) return; var th = through(p.o); p.img.style.transform = 'translate3d(0,' + ((th - .5) * -14).toFixed(2) + '%,0) scale(1.06)'; });
     rises.forEach(function (r) { if (!near(r.o)) return; var t = seg(reveal(r.o), .2, .65), n = r.w.length; r.w.forEach(function (w, i) { var v = eo(clamp(t * (n * .35 + 1) - i * .35, 0, 1)); w.style.transform = 'translateY(' + ((1 - v) * 105).toFixed(1) + '%)'; }); });
     if (near(gCounts)) { var ct = eo(seg(reveal(gCounts), .25, .8)); counts.forEach(function (c) { var to = +c.dataset.count, d = +(c.dataset.dec || 0); c.textContent = (to * ct).toFixed(d); }); }
