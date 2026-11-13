@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261113">
-<script src="/assets/config.js?v=20261113"></script>
+<link rel="stylesheet" href="/assets/site.css?v=20261113b">
+<script src="/assets/config.js?v=20261113b"></script>
 
 </head>
 <link rel="preload" as="image" href="/img/dkg-logo.png">
@@ -406,9 +406,13 @@ form { display: grid; gap: 20px; max-width: 520px; }
 </style>
 <body data-own-scroll data-project="Aveda Arenium" data-wa-msg="Hello, I'm interested in Aveda Arenium by DKG Landcorp.">
 
-<div class="ldr" id="pre" aria-hidden="true" style="position:fixed;inset:0;z-index:70;background:#12100c;display:grid;place-items:center">
-  <video id="ldrv" muted playsinline autoplay preload="auto" style="width:min(100vw,1280px);height:auto;max-height:100vh;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 100%)"><source src="/img/loader.webm" type="video/webm"><source src="/img/loader.mp4" type="video/mp4"></video>
-  <div class="ldr-bar"><i id="prebar"></i></div>
+<div class="pre-l" id="pre" aria-hidden="true">
+  <div class="pre-c">
+    <img class="pre-logo" src="/img/dkg-logo.png" alt="">
+    <div class="pre-wm" id="prewm"></div>
+    <span class="lbl pre-sub">PR-7 · GMADA Aerocity · Mohali</span>
+  </div>
+  <div class="pre-b"><span class="lbl" style="color:var(--taupe)">Preparing the film</span><div class="pre-bar"><i id="prebar"></i></div><span class="pre-pct" id="prepct">0</span></div>
 </div>
 </div>
 
@@ -1055,13 +1059,14 @@ form { display: grid; gap: 20px; max-width: 520px; }
 
   /* ---------- preloader ---------- */
   var pre = $('#pre'), preDone = false, preStart = performance.now();
+  $('#prewm').innerHTML = 'Aveda Arenium'.split('').map(function (ch, i) { return '<span style="transition-delay:' + (.25 + i * .045).toFixed(2) + 's">' + (ch === ' ' ? '&nbsp;' : ch) + '</span>'; }).join('');
   document.body.classList.add('locked');
   requestAnimationFrame(function () { requestAnimationFrame(function () { pre.classList.add('go'); }); });
   var shownPct = 0;
-  function preProgress(p) { var v = Math.round(clamp(p, 0, 1) * 100); if (v > shownPct) { shownPct = v; $('#prebar').style.transform = 'scaleX(' + (v / 100) + ')'; } if (p >= 1) finishPre(); }
+  function preProgress(p) { var v = Math.round(clamp(p, 0, 1) * 100); if (v > shownPct) { shownPct = v; $('#prepct').textContent = v; $('#prebar').style.transform = 'scaleX(' + (v / 100) + ')'; } if (p >= 1) finishPre(); }
   function finishPre() {
     if (preDone) return; preDone = true;
-    var wait = Math.max(0, 3600 - (performance.now() - preStart));   // let the logo animation finish forming
+    var wait = Math.max(0, 2400 - (performance.now() - preStart));
     setTimeout(function () {
       dirtyFilm = true;
       setTimeout(function () { pre.classList.add('out'); document.body.classList.remove('locked'); $('#nav').classList.remove('pre'); if (lenis) lenis.start(); }, 250);

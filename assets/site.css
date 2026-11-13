@@ -89,12 +89,21 @@ body.locked { overflow: hidden; }
 .gnav-links a.gbtn::after { display: none; }
 .gnav-links a.gbtn:hover, .gnav-links a.gbtn[aria-current="page"] { background: var(--espresso); color: var(--bone); border-color: var(--espresso); }
 .gnav.dark .gnav-links a.gbtn:hover, .gnav.dark .gnav-links a.gbtn[aria-current="page"] { background: var(--bone); color: var(--espresso); border-color: var(--bone); }
-/* loading screen: the DKG logo animation */
-.ldr { position: fixed; inset: 0; z-index: 70; background: #12100c; display: grid; place-items: center; transition: opacity .9s var(--ease), visibility 0s linear .9s; }
-.ldr.out { opacity: 0; visibility: hidden; pointer-events: none; }
-.ldr video { width: min(100vw, 1280px); height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.ldr-bar { position: absolute; left: 50%; bottom: calc(32px + env(safe-area-inset-bottom, 0px)); width: min(220px, 50vw); height: 1px; margin-left: min(-110px, -25vw); background: #ffffff1f; overflow: hidden; }
-.ldr-bar i { display: block; height: 100%; background: #d9a95a; transform: scaleX(0); transform-origin: left; transition: transform .4s linear; }
+/* loading screen (home and Aveda) */
+.pre-l { position: fixed; inset: 0; z-index: 60; background: var(--espresso); color: var(--bone); display: grid; grid-template-rows: 1fr auto; transition: transform 1.1s cubic-bezier(.7,0,.2,1); }
+.pre-l.out { transform: translateY(-100%); pointer-events: none; }
+.pre-c { display: grid; place-items: center; align-content: center; gap: 28px; }
+.pre-logo { width: clamp(120px, 14vw, 180px); clip-path: inset(100% 0 0 0); transform: translateY(14px); transition: clip-path 1.1s var(--ease), transform 1.1s var(--ease); }
+.pre-l.go .pre-logo { clip-path: inset(0 0 0 0); transform: none; }
+.pre-wm { display: flex; overflow: hidden; font: 400 clamp(18px, 2.2vw, 30px)/1.1 var(--sans); letter-spacing: .32em; margin-right: -.32em; text-transform: uppercase; }
+.pre-wm span { display: inline-block; transform: translateY(110%); transition: transform .9s var(--ease); }
+.pre-l.go .pre-wm span { transform: none; }
+.pre-sub { opacity: 0; transition: opacity .9s var(--ease) .9s; color: var(--taupe); }
+.pre-l.go .pre-sub { opacity: 1; }
+.pre-b { display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 0 var(--gutr) calc(24px + env(safe-area-inset-bottom, 0px)) var(--gut); }
+.pre-bar { flex: 1; max-width: 360px; height: 1px; background: var(--hair-d); overflow: hidden; }
+.pre-bar i { display: block; height: 100%; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform .35s linear; }
+.pre-pct { font: 400 clamp(40px, 5vw, 64px)/.9 var(--serif); letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
 .gnav-wm { font: 400 clamp(15px, 1.6vw, 24px)/1 var(--sans); letter-spacing: .32em; margin-right: -.32em; text-transform: uppercase; white-space: nowrap; text-align: center; display: grid; justify-items: center; gap: 4px; }
 .gnav-wm small { font: 600 9px/1 var(--sans); letter-spacing: .12em; opacity: .7; margin-right: -.12em; }
 .gnav-end { display: flex; justify-content: flex-end; align-items: center; gap: 24px; }

@@ -169,10 +169,15 @@
 </style>
 
 <!--@nav home-->
-<div class="ldr" id="pre" aria-hidden="true" style="position:fixed;inset:0;z-index:70;background:#12100c;display:grid;place-items:center">
-  <video id="ldrv" muted playsinline autoplay preload="auto" style="width:min(100vw,1280px);height:auto;max-height:100vh;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 100%)"><source src="/img/loader.webm" type="video/webm"><source src="/img/loader.mp4" type="video/mp4"></video>
-  <div class="ldr-bar"><i id="prebar"></i></div>
+<div class="pre-l" id="pre" aria-hidden="true">
+  <div class="pre-c">
+    <img class="pre-logo" src="/img/dkg-logo.png" alt="">
+    <div class="pre-wm" id="prewm"></div>
+    <span class="lbl pre-sub">A DMR Builders company · Since 1995</span>
+  </div>
+  <div class="pre-b"><span class="lbl" style="color:var(--taupe)">Preparing the film</span><div class="pre-bar"><i id="prebar"></i></div><span class="pre-pct" id="prepct">0</span></div>
 </div>
+
 
 <main>
 <!-- ============ hero: through the curtains, out of the gate, into the sky ============ -->
@@ -523,17 +528,20 @@
 
   var DPR = 1, CW = 0, CHh = 0, send = null, firstDrawn = false;
   function onPlayer(m) {
-    if (m.t === 'd' && !firstDrawn) { firstDrawn = true; poster.style.opacity = '0'; ldrDone(); }
-    else if (m.t === 'p') { preBar.style.transform = 'scaleX(' + Math.min(1, m.v).toFixed(3) + ')'; if (m.v >= 1) ldrDone(); }
+    if (m.t === 'd' && !firstDrawn) { firstDrawn = true; poster.style.opacity = '0'; }
+    else if (m.t === 'p') preProgress(m.v);
   }
-  /* loading screen: the DKG logo forms, then the curtains are revealed once the film's opening frames are in */
-  var pre = $('#pre'), preBar = $('#prebar'), preStart = performance.now(), preOut = false, preReady = 0;
+  /* loading screen: logo and wordmark rise while the film's opening frames load */
+  var pre = $('#pre'), preStart = performance.now(), preOut = false, shownPct = 0;
+  $('#prewm').innerHTML = 'DKG Landcorp'.split('').map(function (ch, i) { return '<span style="transition-delay:' + (.25 + i * .045).toFixed(2) + 's">' + (ch === ' ' ? '&nbsp;' : ch) + '</span>'; }).join('');
   document.body.classList.add('locked'); if (window.__lenis) window.__lenis.stop();
+  requestAnimationFrame(function () { requestAnimationFrame(function () { pre.classList.add('go'); }); });
+  function preProgress(v) { var n = Math.round(clamp(v, 0, 1) * 100); if (n > shownPct) { shownPct = n; $('#prepct').textContent = n; $('#prebar').style.transform = 'scaleX(' + (n / 100) + ')'; } if (v >= 1) ldrDone(); }
   function ldrDone() {
-    if (preOut || ++preReady < 1) return; preOut = true;
-    setTimeout(function () { pre.classList.add('out'); document.body.classList.remove('locked'); if (window.__lenis) window.__lenis.start(); }, Math.max(0, 3600 - (performance.now() - preStart)));
+    if (preOut) return; preOut = true;
+    setTimeout(function () { pre.classList.add('out'); document.body.classList.remove('locked'); if (window.__lenis) window.__lenis.start(); }, Math.max(0, 2400 - (performance.now() - preStart)));
   }
-  setTimeout(function () { preReady = 1; ldrDone(); }, 10000);
+  setTimeout(function () { preProgress(1); }, 12000);
   function canvasSize() { DPR = mobile ? Math.min(devicePixelRatio || 1, 1.75) : Math.min(devicePixelRatio || 1, 1.25); CW = Math.round(cv.clientWidth * DPR); CHh = Math.round(cv.clientHeight * DPR); }
   (function boot() {
     canvasSize();
