@@ -78,8 +78,6 @@ body.locked { overflow: hidden; }
 .gnav.dark::before { opacity: 1; }
 .gnav.solid::after { opacity: 1; }
 .gnav.solid.dark::after { opacity: 0; }
-.gnav.solid.dark[style*="--navbg"]::after { opacity: 1; }
-.gnav.solid.dark[style*="--navbg"]::before { opacity: 0; }
 .gnav.solid.dark::before { inset: 0 0 -24px; background: linear-gradient(to bottom, #161211eb 55%, #16121100); }
 .gnav a { text-decoration: none; color: inherit; }
 .gnav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
