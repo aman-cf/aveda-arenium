@@ -73,7 +73,7 @@ body.locked { overflow: hidden; }
 .gnav > * { pointer-events: auto; }
 .gnav::before, .gnav::after { content: ''; position: absolute; z-index: -1; opacity: 0; transition: opacity .4s var(--ease); pointer-events: none; }
 .gnav::before { inset: 0 0 -40px; background: linear-gradient(to bottom, #16121166, #16121100); }
-.gnav::after { inset: 0 0 -24px; background: linear-gradient(to bottom, #f5f4f2f0 55%, #f5f4f200); }
+.gnav::after { inset: 0 0 -24px; background: linear-gradient(to bottom, var(--navbg, #f5f4f2) 55%, transparent); }
 .gnav.dark { color: var(--bone); }
 .gnav.dark::before { opacity: 1; }
 .gnav.solid::after { opacity: 1; }

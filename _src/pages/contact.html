@@ -1,52 +1,91 @@
 <!--@head {"title":"Contact us | DKG Landcorp","desc":"Visit or contact DKG Landcorp at World Tech 83, IT City Road, Sector 83, Mohali. Book a site visit to Aveda Arenium or send us your enquiry.","path":"/contact"}-->
 <body class="dkg" data-wa-msg="Hello DKG Landcorp, I have a question.">
 <style>
-.ct { padding-top: clamp(120px, 18vh, 200px); }
-.ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; align-items: start; margin-top: clamp(48px, 7vw, 96px); }
-.ct-info { display: grid; gap: 0; border-top: 1px solid var(--hair-l15); }
-.ct-info > div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--hair-l15); align-items: baseline; }
-.ct-info .v { font: 400 22px/1.2 var(--serif); letter-spacing: -.02em; display: grid; gap: 6px; }
-.ct-info .v a { text-decoration: none; }
-.ct-info .v a:hover { color: var(--coral); }
-.map { position: relative; margin-top: 32px; aspect-ratio: 16/10; background: var(--stone); overflow: hidden; }
-.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.4) sepia(.15); }
-.quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: clamp(64px, 8vw, 120px); }
-.quick button, .quick a { display: grid; gap: 10px; text-align: left; padding: 20px 0 0; background: none; border: 0; border-top: 1px solid var(--espresso); cursor: pointer; color: inherit; text-decoration: none; font: inherit; }
+/* Contact — a dark, warm arrival; information and form on cream; the map as a full-bleed band. */
+.ch { position: relative; min-height: 92vh; min-height: 92svh; color: var(--bone); background: var(--espresso); overflow: hidden; display: grid; align-items: end; }
+.ch-img { position: absolute; inset: 0; }
+.ch-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; transform: scale(1.08); animation: chzoom 14s var(--ease) forwards; }
+@keyframes chzoom { to { transform: scale(1); } }
+.ch-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #161211f2 0%, #161211b3 38%, #16121159 70%, #16121199 100%); }
+.ch-in { position: relative; z-index: 1; padding: clamp(140px, 22vh, 220px) var(--gutr) clamp(32px, 6vh, 64px) var(--gut); display: grid; gap: clamp(40px, 7vh, 80px); }
+.ch-top { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; align-items: end; }
+.ch-top .lbl { color: #f4efe9b3; grid-column: 1 / -1; }
+.ch h1 { color: #fffaf3; }
+.ch h1 em { color: #f0b9a8; }
+.ch-top .body { color: #f4efe9d9; max-width: 440px; justify-self: end; margin: 0; }
+.quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.quick button, .quick a { position: relative; display: grid; gap: 10px; align-content: start; text-align: left; padding: 22px 22px 24px; background: #f4efe90d; border: 1px solid #f4efe926; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); cursor: pointer; color: var(--bone); text-decoration: none; font: inherit; transition: background .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease); }
+.quick button:hover, .quick a:hover { background: #f4efe91f; border-color: #f4efe966; transform: translateY(-3px); }
+.quick .n { font: 600 10px/1 var(--sans); letter-spacing: .12em; color: var(--coral); }
 .quick b { font: 400 clamp(26px, 2.4vw, 34px)/1 var(--serif); letter-spacing: -.03em; font-weight: 400; }
-.quick span.p { color: var(--taupe-deep); max-width: 300px; }
-.quick button:hover b, .quick a:hover b { color: var(--coral); }
-@media (max-width: 820px) { .ct-grid, .quick { grid-template-columns: 1fr; } .ct-info > div { grid-template-columns: 1fr; gap: 6px; } }
+.quick span.p { color: #f4efe9b3; max-width: 300px; }
+.quick .ar { position: absolute; right: 20px; top: 20px; width: 14px; height: 14px; opacity: .7; }
+
+.cb { background: #efe4d2; padding: clamp(80px, 11vw, 160px) 0; }
+.cb-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 16px; align-items: stretch; }
+.ci { background: var(--espresso); color: var(--bone); padding: clamp(28px, 3.4vw, 48px); display: grid; gap: 28px; align-content: start; position: relative; overflow: hidden; }
+.ci::before { content: ''; position: absolute; right: -90px; top: -90px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, #dd4d4d33 0%, #dd4d4d00 70%); }
+.ci h2 { color: #fffaf3; }
+.ci-rows { display: grid; border-top: 1px solid var(--hair-d15); position: relative; }
+.ci-rows > div { display: grid; gap: 6px; padding: 16px 0; border-bottom: 1px solid var(--hair-d15); }
+.ci-rows .lbl { color: var(--taupe); }
+.ci-rows .v { font: 400 21px/1.22 var(--serif); letter-spacing: -.02em; display: grid; gap: 4px; }
+.ci-rows .v a { text-decoration: none; color: inherit; }
+.ci-rows .v a:hover { color: var(--coral); }
+.ci .tl { color: var(--bone); }
+.cf { background: var(--ivory); padding: clamp(28px, 3.4vw, 56px); box-shadow: 0 30px 80px -40px #6e24203d; border-top: 3px solid var(--coral); display: grid; gap: 28px; align-content: start; }
+.cf-h { display: grid; gap: 12px; }
+
+.mapband { position: relative; height: min(70vh, 640px); background: var(--stone); }
+.mapband iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.55) sepia(.25) contrast(.95); }
+.mapcard { position: absolute; left: var(--gut); bottom: clamp(16px, 4vw, 40px); width: min(420px, calc(100% - 32px)); background: var(--gulf); color: #fff; padding: 24px 26px; display: grid; gap: 12px; box-shadow: 0 24px 60px -24px #0c629180; }
+.mapcard .lbl { color: #ffffffb3; }
+.mapcard b { font: 400 26px/1.08 var(--serif); letter-spacing: -.02em; font-weight: 400; }
+.mapcard .tl { color: #fff; }
+@media (max-width: 860px) {
+  .ch-top, .quick, .cb-grid { grid-template-columns: 1fr; }
+  .ch-top .body { justify-self: start; }
+  .mapcard { position: relative; left: auto; bottom: auto; width: auto; }
+  .mapband { height: auto; display: grid; } .mapband iframe { position: relative; height: 56vh; }
+}
 </style>
 
 <!--@nav contact-->
 
 <main>
-<section class="sec ct wrap" aria-label="Contact DKG Landcorp">
-  <div class="split">
-    <span class="lbl muted">Contact us</span>
-    <div class="rc stack"><h1 class="dxxl rise" id="ct-h">Talk to <em>us</em>.</h1><p class="body">Questions about Aveda Arenium, a site visit, partnerships or careers: send a note and the right person will reply.</p></div>
-  </div>
-
-  <div class="quick">
-    <button type="button" data-enquire="visit" data-project="Aveda Arenium"><span class="lbl muted">01</span><b>Book a site visit</b><span class="p">See Aveda Arenium's location and plans with a relationship manager.</span></button>
-    <button type="button" data-enquire="callback"><span class="lbl muted">02</span><b>Request a call back</b><span class="p">Tell us when to call. We'll ring at that time.</span></button>
-    <a href="/connect"><span class="lbl muted">03</span><b>Work with us</b><span class="p">Careers, channel partners, land owners and vendors.</span></a>
-  </div>
-
-  <div class="ct-grid">
-    <div>
-      <div class="ct-info">
-        <div><span class="lbl muted">Corporate office</span><span class="v">World Tech 83, Ground Floor, Plot I-9, IT City Road, adjoining Infosys Road, Sector 83, Mohali, Punjab 140306</span></div>
-        <div data-hide-empty><span class="lbl muted">Call</span><span class="v"><a data-phone href="#"></a></span></div>
-        <div data-hide-empty><span class="lbl muted">WhatsApp</span><span class="v"><a data-whatsapp href="#">Chat with our team</a></span></div>
-        <div data-hide-empty><span class="lbl muted">Email</span><span class="v"><a data-email href="#"></a></span></div>
-        <div data-hide-empty><span class="lbl muted">Hours</span><span class="v"><span data-hours></span></span></div>
-        <div><span class="lbl muted">Aveda Arenium</span><span class="v">PR-7, Pocket 1, E-Block, GMADA Aerocity, Mohali</span></div>
-      </div>
-      <div class="map"><iframe title="Map: DKG Landcorp corporate office, World Tech 83, Sector 83, Mohali" src="https://www.google.com/maps?q=World+Tech+83,+IT+City+Road,+Sector+83,+Mohali,+Punjab&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-      <p style="margin-top:12px"><a class="tl wide" href="https://www.google.com/maps/dir/?api=1&destination=World+Tech+83,+Sector+83,+Mohali" target="_blank" rel="noopener">Get directions{{arrow}}</a></p>
+<section class="ch" id="top" data-tone="dark" data-nav-clear aria-label="Contact DKG Landcorp">
+  <div class="ch-img" aria-hidden="true"><img src="/h/poster.webp" alt="" fetchpriority="high"></div>
+  <div class="ch-in">
+    <div class="ch-top">
+      <span class="lbl">Contact us</span>
+      <h1 class="dxxl rise" id="ct-h">Talk to <em>us</em>.</h1>
+      <p class="body">Questions about Aveda Arenium, a site visit, partnerships or careers: send a note and the right person will reply.</p>
     </div>
-    <div>
+    <div class="quick">
+      <button type="button" data-enquire="visit" data-project="Aveda Arenium"><span class="n">01 — Visit</span><b>Book a site visit</b><span class="p">See Aveda Arenium's location and plans with a relationship manager.</span><svg class="ar" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
+      <button type="button" data-enquire="callback"><span class="n">02 — Call</span><b>Request a call back</b><span class="p">Tell us when to call. We'll ring at that time.</span><svg class="ar" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
+      <a href="/connect"><span class="n">03 — Connect</span><b>Work with us</b><span class="p">Careers, channel partners, land owners and vendors.</span><svg class="ar" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="cb" data-nav-bg="#efe4d2" aria-label="Contact details and enquiry form">
+  <div class="wrap cb-grid">
+    <aside class="ci up">
+      <span class="lbl" style="color:var(--coral)">Visit or reach us</span>
+      <h2 class="dxl">Our doors are <em>open</em>.</h2>
+      <div class="ci-rows">
+        <div><span class="lbl">Corporate office</span><span class="v">World Tech 83, Ground Floor, Plot I-9, IT City Road, adjoining Infosys Road, Sector 83, Mohali, Punjab 140306</span></div>
+        <div data-hide-empty><span class="lbl">Call</span><span class="v"><a data-phone href="#"></a></span></div>
+        <div data-hide-empty><span class="lbl">WhatsApp</span><span class="v"><a data-whatsapp href="#">Chat with our team</a></span></div>
+        <div data-hide-empty><span class="lbl">Email</span><span class="v"><a data-email href="#"></a></span></div>
+        <div data-hide-empty><span class="lbl">Hours</span><span class="v"><span data-hours></span></span></div>
+        <div><span class="lbl">Aveda Arenium site</span><span class="v">PR-7, Pocket 1, E-Block, GMADA Aerocity, Mohali</span></div>
+      </div>
+      <a class="tl wide" href="https://www.google.com/maps/dir/?api=1&amp;destination=World+Tech+83,+Sector+83,+Mohali" target="_blank" rel="noopener">Get directions{{arrow}}</a>
+    </aside>
+    <div class="cf up" style="transition-delay:.1s">
+      <div class="cf-h"><span class="lbl muted">Send a message</span><h2 class="dxl">How can we <em>help</em>?</h2></div>
       <form class="lf" data-type="contact">
         <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
         <div class="f"><label for="c-topic">What's this about?</label><select id="c-topic" name="topic"><option>Buying a home at Aveda Arenium</option><option>Booking a site visit</option><option>Channel partnership</option><option>Careers</option><option>Land or joint development</option><option>Vendor or contractor</option><option>Media or press</option><option>Something else</option></select></div>
@@ -57,11 +96,14 @@
         <p class="err" role="alert"></p>
         <button class="tl wide" type="submit">Send message{{arrow}}</button>
       </form>
-      <div class="lf-done" hidden><span class="lbl muted">Message received</span><h3 data-thx>Thank you.</h3><p class="body muted">The right person on our team will reply shortly.</p></div>
-    </div>
+      <div class="lf-done" hidden><span class="lbl" style="color:var(--coral)">Message received</span><h3 data-thx>Thank you.</h3><p class="body muted">The right person on our team will reply shortly.</p></div>
   </div>
 </section>
-<div style="height:clamp(96px,12vw,160px)"></div>
+
+<section class="mapband" aria-label="Map">
+  <iframe title="Map: DKG Landcorp corporate office, World Tech 83, Sector 83, Mohali" src="https://www.google.com/maps?q=World+Tech+83,+IT+City+Road,+Sector+83,+Mohali,+Punjab&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="mapcard"><span class="lbl">Corporate office</span><b>World Tech 83, Sector 83, Mohali</b><a class="tl" href="https://www.google.com/maps/dir/?api=1&amp;destination=World+Tech+83,+Sector+83,+Mohali" target="_blank" rel="noopener">Open in Google Maps{{arrow}}</a></div>
+</section>
 </main>
 
 <!--@footer-->
