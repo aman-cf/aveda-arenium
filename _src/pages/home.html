@@ -473,7 +473,7 @@
   function makePlayer(post) {
     var cv, ctx, W = 0, H = 0, FW, FH, mobile, CH, base, LRU = 40, ox = .5;
     var blobs = {}, fetching = {}, bmp = {}, decoding = {}, lru = [], q = [], act = 0, need0 = 0, got0 = 0, want = [0, 0], fx = 0, dir = 1, drawn = '';
-    function fileOf(c, f) { var n = CH[c][0]; return mobile ? 'h/' + n + 'm' + ('0' + Math.floor(f / 4)).slice(-2) + '.avif' : 'h/' + n + ('00' + f).slice(-3) + '.avif'; }
+    function fileOf(c, f) { var n = CH[c][0]; return mobile ? 'h/' + n + 'm/' + n + 'm' + ('0' + Math.floor(f / 4)).slice(-2) + '.avif' : 'h/' + n + '/' + Math.floor(f / 48) + '/' + n + ('00' + f).slice(-3) + '.avif'; }   // frames are grouped in folders of at most 48 files
     function unitOf(c, f) { return c + ':' + (mobile ? Math.floor(f / 4) : f); }
     function buildQueue() {
       var all = [];
