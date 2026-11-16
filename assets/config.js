@@ -11,6 +11,8 @@ window.DKG_CONFIG = {
     youtube: '',
     linkedin: ''
   },
+  // Google Sheet web app URL (see docs/LEADS.md). Needed on GitHub Pages, where the site has no server of its own.
+  sheetWebhook: '',
   rera: {
     aveda: ''         // Aveda Arenium RERA registration number
   }

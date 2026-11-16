@@ -106,8 +106,7 @@
       var bad = validate(f); if (bad) { if (errEl) errEl.textContent = bad[1]; bad[0].focus(); return; }
       if (errEl) errEl.textContent = ''; if (btn) btn.disabled = true;
       var data = payload(f);
-      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw new Error(j.error || 'Failed'); return j; }); })
+      sendLead(data)
         .then(function () {
           push('lead_submit', { form_type: data.type, project: data.project || '' });
           var done = f.parentNode.querySelector('.lf-done'), first = (data.name || '').split(' ')[0];
@@ -122,6 +121,19 @@
         });
     });
   });
+
+
+  /* Where leads go. On Vercel: the site's own /api/lead function. On a static host (GitHub Pages)
+     there is no server, so leads go straight to the Google Sheet web app set in config.js. */
+  var LEAD_URL = C.leadsEndpoint || (window.DKG_STATIC ? '' : '/api/lead');
+  function sendLead(data) {
+    if (LEAD_URL) return fetch(LEAD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw new Error(j.error || 'Failed'); return j; }); });
+    data.received_at = new Date().toISOString();
+    if (C.sheetWebhook) return fetch(C.sheetWebhook, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    if (window.console) console.warn('DKG: no lead destination set in assets/config.js (sheetWebhook); this enquiry was not stored.', data);
+    return Promise.resolve();
+  }
 
   /* ---------- action bar + WhatsApp button ---------- */
   var mbar = $('#mbar'), wa = $('#wa');
